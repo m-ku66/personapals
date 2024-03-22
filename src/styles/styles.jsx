@@ -11,6 +11,8 @@ const classNames = {
   container_fit_column_center: "w-fit h-fit flex flex-col items-center",
   button:
     "px-[2.3rem] py-[0.5rem] bg-[#D8D7FF] rounded cursor-pointer select-none w-fit h-fit text-center",
+  mobile_display: "sm:flex md:hidden",
+  desktop_display: "hidden md:block",
 };
 
 export default classNames;

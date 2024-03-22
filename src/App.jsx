@@ -25,8 +25,10 @@ function App() {
 
   return (
     <>
-      <div className="sm:block md:hidden">{renderAppContent(appState)}</div>
-      <div className="sm:hidden md:block">
+      <div className={classNames.mobile_display}>
+        {renderAppContent(appState)}
+      </div>
+      <div className={classNames.desktop_display}>
         <div className={classNames.container}>
           <div className={classNames.container_fill_column_full_center}>
             <p>This quiz is made for mobile devices only :/</p>
