@@ -21,7 +21,7 @@ const Quiz = ({ setAppState }) => {
                   {currentQuestion.prompt}
                 </p>
                 <img
-                  className="mb-[1rem]"
+                  className="mb-[1.5rem]"
                   src={currentQuestion.image}
                   alt="question image"
                 />
@@ -32,14 +32,14 @@ const Quiz = ({ setAppState }) => {
                 to={""}
                 type={""}
               />
-              <div className="py-[0.3rem]"></div>
+              <div className="py-[0.5rem]"></div>
               <Button
                 buttonText={currentQuestion.choice2}
                 purpose={""}
                 to={""}
                 type={""}
               />
-              <div className="py-[0.5rem]"></div>
+              <div className="py-[1rem]"></div>
               <Button
                 buttonText={
                   currentQuestionIndex < questions.length - 1
