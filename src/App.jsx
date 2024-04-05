@@ -6,27 +6,33 @@ import Results from "./components/Results";
 
 function App() {
   const [appState, setAppState] = useState("title");
-  const [scrollState, setScrollState] = useState(null);
-  let page;
+  // const [scrollState, setScrollState] = useState(null);
 
   useEffect(() => {
-    page = document.getElementsByTagName("body");
-    page[0].style.overflowY = scrollState ? "scroll" : "hidden";
-  }, []);
+    const handleScroll = () => {
+      document.body.style.overflowY =
+        appState === "title" ? "hidden" : "scroll";
+    };
+
+    handleScroll(); // Set initial scroll behavior based on the initial app state
+
+    // Add event listener to handle scrolling behavior
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [appState]);
 
   function renderAppContent(state) {
     let renderedContent;
     switch (state) {
       case "title":
-        setScrollState(false);
         renderedContent = <TitlePage setAppState={setAppState} />;
         break;
       case "questions":
-        setScrollState(true);
         renderedContent = <Quiz setAppState={setAppState} />;
         break;
       case "results":
-        setScrollState(true);
         renderedContent = <Results setAppState={setAppState} />;
         break;
     }
