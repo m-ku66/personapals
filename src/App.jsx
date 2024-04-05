@@ -6,30 +6,27 @@ import Results from "./components/Results";
 
 function App() {
   const [appState, setAppState] = useState("title");
-  const [scrollState, setScrollState] = useState(false);
+  const [scrollState, setScrollState] = useState(null);
   let page;
 
   useEffect(() => {
     page = document.getElementsByTagName("body");
     page[0].style.overflowY = scrollState ? "scroll" : "hidden";
-
-    if (!appState === "title") {
-      setScrollState(true);
-    } else {
-      setScrollState(false);
-    }
-  }, [appState]);
+  }, []);
 
   function renderAppContent(state) {
     let renderedContent;
     switch (state) {
       case "title":
+        setScrollState(false);
         renderedContent = <TitlePage setAppState={setAppState} />;
         break;
       case "questions":
+        setScrollState(true);
         renderedContent = <Quiz setAppState={setAppState} />;
         break;
       case "results":
+        setScrollState(true);
         renderedContent = <Results setAppState={setAppState} />;
         break;
     }
