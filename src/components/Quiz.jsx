@@ -15,7 +15,7 @@ const Quiz = ({ setAppState }) => {
       case 1:
         quizContent = (
           <>
-            <div className="w-[80%] h-[88%] flex flex-col items-center">
+            <div className="w-[88%] h-[88%] flex flex-col items-center">
               <div className={classNames.container_fit_column_center}>
                 <p className="mulishBold text-white mb-[0.7rem] w-[95%] text-center text-[0.8rem]">
                   {currentQuestion.prompt}
