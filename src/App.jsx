@@ -6,17 +6,17 @@ import Results from "./components/Results";
 
 function App() {
   const [appState, setAppState] = useState("title");
-  const [scrollState, setScrollState] = useState(true);
+  const [scrollState, setScrollState] = useState(false);
   let page;
 
   useEffect(() => {
     page = document.getElementsByTagName("body");
     page[0].style.overflowY = scrollState ? "scroll" : "hidden";
 
-    if (appState === "title") {
-      setScrollState(false);
-    } else {
+    if (!appState === "title") {
       setScrollState(true);
+    } else {
+      setScrollState(false);
     }
   }, []);
 
