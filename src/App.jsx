@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import classNames from "./styles/styles";
 import TitlePage from "./components/TitlePage";
 import Quiz from "./components/Quiz";
@@ -6,6 +6,13 @@ import Results from "./components/Results";
 
 function App() {
   const [appState, setAppState] = useState("title");
+  const [scrollState, setScrollState] = useState(false);
+  let page;
+
+  useEffect(() => {
+    page = document.getElementsByTagName("body");
+    page[0].style.overflowY = scrollState ? "scroll" : "hidden";
+  }, []);
 
   function renderAppContent(state) {
     let renderedContent;
