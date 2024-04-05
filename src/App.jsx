@@ -6,7 +6,7 @@ import Results from "./components/Results";
 
 function App() {
   const [appState, setAppState] = useState("title");
-  const [scrollState, setScrollState] = useState(false);
+  const [scrollState, setScrollState] = useState(true);
   let page;
 
   useEffect(() => {
