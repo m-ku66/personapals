@@ -18,7 +18,7 @@ function App() {
     } else {
       setScrollState(false);
     }
-  }, []);
+  }, [appState]);
 
   function renderAppContent(state) {
     let renderedContent;
