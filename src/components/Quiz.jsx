@@ -15,7 +15,7 @@ const Quiz = ({ setAppState }) => {
       case 1:
         quizContent = (
           <>
-            <div className="w-[80%] h-[80%] flex flex-col items-center">
+            <div className="absolute top-[10%] w-[80%] h-[80%] flex flex-col items-center">
               <div className={classNames.container_fit_column_center}>
                 <p className="mb-[1rem] w-[95%] text-center text-[0.8rem]">
                   {currentQuestion.prompt}
@@ -57,7 +57,7 @@ const Quiz = ({ setAppState }) => {
                   }
                 }}
                 to={""}
-                type={""}
+                type={"start"}
               />
             </div>
           </>
@@ -77,8 +77,8 @@ const Quiz = ({ setAppState }) => {
   return (
     <div className={classNames.container}>
       <div className={classNames.container_fill_padding}>
-        <div className={classNames.container_fill_column_full_center}>
-          <div className="mb-[1rem]">
+        <div className="relative w-full h-full flex flex-col items-center justify-center">
+          <div className="absolute top-[5%] mb-[1rem]">
             {quizState === 1
               ? `${currentQuestionIndex + 1} / ${questions.length}`
               : ""}
