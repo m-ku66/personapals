@@ -15,13 +15,13 @@ const Quiz = ({ setAppState }) => {
       case 1:
         quizContent = (
           <>
-            <div className="absolute top-[10%] w-[80%] h-[80%] flex flex-col items-center">
+            <div className="w-[80%] h-[88%] flex flex-col items-center">
               <div className={classNames.container_fit_column_center}>
-                <p className="mb-[1rem] w-[95%] text-center text-[0.8rem]">
+                <p className="mulishBold text-white mb-[0.7rem] w-[95%] text-center text-[0.8rem]">
                   {currentQuestion.prompt}
                 </p>
                 <img
-                  className="mb-[2rem]"
+                  className="mb-[1rem]"
                   src={currentQuestion.image}
                   alt="question image"
                 />
@@ -32,7 +32,7 @@ const Quiz = ({ setAppState }) => {
                 to={""}
                 type={""}
               />
-              <div className="py-[0.5rem]"></div>
+              <div className="py-[0.3rem]"></div>
               <Button
                 buttonText={currentQuestion.choice2}
                 purpose={""}
@@ -43,7 +43,7 @@ const Quiz = ({ setAppState }) => {
               <Button
                 buttonText={
                   currentQuestionIndex < questions.length - 1
-                    ? "Next"
+                    ? "next"
                     : "See Results!"
                 }
                 purpose={() => {
@@ -78,9 +78,9 @@ const Quiz = ({ setAppState }) => {
     <div className={classNames.container}>
       <div className={classNames.container_fill_padding}>
         <div className="relative w-full h-full flex flex-col items-center justify-center">
-          <div className="absolute top-[5%] mb-[1rem]">
+          <div className="text-[0.7rem] mulish text-white absolute top-[3%] mb-[1rem]">
             {quizState === 1
-              ? `${currentQuestionIndex + 1} / ${questions.length}`
+              ? `${currentQuestionIndex + 1} of ${questions.length}`
               : ""}
           </div>
           {renderQuizContent(quizState)}
