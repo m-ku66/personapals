@@ -12,6 +12,12 @@ function App() {
   useEffect(() => {
     page = document.getElementsByTagName("body");
     page[0].style.overflowY = scrollState ? "scroll" : "hidden";
+
+    if (appState === "title") {
+      setScrollState(false);
+    } else {
+      setScrollState(true);
+    }
   }, []);
 
   function renderAppContent(state) {
