@@ -15,38 +15,51 @@ const Quiz = ({ setAppState }) => {
       case 1:
         quizContent = (
           <>
-            <div className={classNames.container_fit_column_center}>
-              <p className="mb-[1rem] w-[95%] text-center text-[0.8rem]">
-                {currentQuestion.prompt}
-              </p>
-              <img
-                className="mb-[2rem]"
-                src={currentQuestion.image}
-                alt="question image"
+            <div className="w-[80%] h-[80%] flex flex-col items-center">
+              <div className={classNames.container_fit_column_center}>
+                <p className="mb-[1rem] w-[95%] text-center text-[0.8rem]">
+                  {currentQuestion.prompt}
+                </p>
+                <img
+                  className="mb-[2rem]"
+                  src={currentQuestion.image}
+                  alt="question image"
+                />
+              </div>
+              <Button
+                buttonText={currentQuestion.choice1}
+                purpose={""}
+                to={""}
+                type={""}
+              />
+              <div className="py-[0.5rem]"></div>
+              <Button
+                buttonText={currentQuestion.choice2}
+                purpose={""}
+                to={""}
+                type={""}
+              />
+              <div className="py-[0.5rem]"></div>
+              <Button
+                buttonText={
+                  currentQuestionIndex < questions.length - 1
+                    ? "Next"
+                    : "See Results!"
+                }
+                purpose={() => {
+                  if (currentQuestionIndex < questions.length - 1) {
+                    setCurrentQuestionIndex(currentQuestionIndex + 1);
+                  } else {
+                    setQuizState(2);
+                    setTimeout(() => {
+                      setAppState("results");
+                    }, 3000);
+                  }
+                }}
+                to={""}
+                type={""}
               />
             </div>
-            <Button buttonText={currentQuestion.choice1} purpose={""} />
-            <div className="py-[0.5rem]"></div>
-            <Button buttonText={currentQuestion.choice2} purpose={""} />
-            <div className="py-[0.5rem]"></div>
-            <Button
-              buttonText={
-                currentQuestionIndex < questions.length - 1
-                  ? "Next"
-                  : "See Results!"
-              }
-              purpose={() => {
-                if (currentQuestionIndex < questions.length - 1) {
-                  setCurrentQuestionIndex(currentQuestionIndex + 1);
-                } else {
-                  setQuizState(2);
-                  setTimeout(() => {
-                    setAppState("results");
-                  }, 3000);
-                }
-              }}
-              to={""}
-            />
           </>
         );
         break;

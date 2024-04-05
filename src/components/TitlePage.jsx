@@ -9,7 +9,7 @@ const TitlePage = ({ setAppState }) => {
       <div className={classNames.container_fill_center}>
         <div className={classNames.container_fit_column_center}>
           <img className="mb-[2rem]" src="/title.svg" alt="Persona Pals!" />
-          <Button buttonText={"start"} purpose={setAppState} to={'questions'} />
+          <Button buttonText={"start"} purpose={setAppState} to={'questions'} type={"start"} />
         </div>
       </div>
     </div>
