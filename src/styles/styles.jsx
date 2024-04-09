@@ -13,6 +13,8 @@ const classNames = {
     "px-[3rem] py-[0.5rem] bg-[#D8D7FF] rounded-[2rem] cursor-pointer select-none w-fit h-fit text-center",
   button_light:
     "px-[2.3rem] py-[0.5rem] bg-[#D8D7FF]/[0.5] rounded cursor-pointer select-none w-fit h-fit text-center",
+  button_focus:
+    "px-[2.3rem] py-[0.5rem] bg-[#D8D7FF] rounded cursor-pointer select-none w-fit h-fit text-center",
   mobile_display: "sm:flex md:hidden",
   desktop_display: "hidden md:block",
 };

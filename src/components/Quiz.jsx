@@ -6,8 +6,22 @@ import questions from "./Questions";
 const Quiz = ({ setAppState }) => {
   const [quizState, setQuizState] = useState(1);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [focusState1, setFocusState1] = useState("base");
+  const [focusState2, setFocusState2] = useState("base");
 
   const currentQuestion = questions[currentQuestionIndex];
+
+  function handleButtonFocus(btnNum) {
+    switch (btnNum) {
+      case 1:
+        setFocusState1("focus");
+        setFocusState2("base");
+        break;
+      case 2:
+        setFocusState2("focus");
+        setFocusState1("base");
+    }
+  }
 
   function renderQuizContent(state) {
     let quizContent;
@@ -28,16 +42,16 @@ const Quiz = ({ setAppState }) => {
               </div>
               <Button
                 buttonText={currentQuestion.choice1}
-                purpose={""}
-                to={""}
-                type={""}
+                purpose={handleButtonFocus}
+                to={1}
+                type={focusState1}
               />
               <div className="py-[0.5rem]"></div>
               <Button
                 buttonText={currentQuestion.choice2}
-                purpose={""}
-                to={""}
-                type={""}
+                purpose={handleButtonFocus}
+                to={2}
+                type={focusState2}
               />
               <div className="py-[1rem]"></div>
               <Button
@@ -49,6 +63,8 @@ const Quiz = ({ setAppState }) => {
                 purpose={() => {
                   if (currentQuestionIndex < questions.length - 1) {
                     setCurrentQuestionIndex(currentQuestionIndex + 1);
+                    setFocusState1("base");
+                    setFocusState2("base");
                   } else {
                     setQuizState(2);
                     setTimeout(() => {
