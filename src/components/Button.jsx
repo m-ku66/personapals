@@ -5,13 +5,6 @@ const Button = ({ buttonText, purpose, to, type }) => {
   const titleText = "mulish text-[1rem] text-[#8886D9]";
   const whiteText = "mulish text-white text-[0.8rem]";
 
-  /**
-   * Idea to change button state.
-   * 
-   * pass a useState to the button's type paramater and the
-   * setState function of it to the button's purpose parameter
-   */
-
   function renderClass(btnType) {
     let btnStyle;
 

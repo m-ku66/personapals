@@ -7,6 +7,8 @@ const questions = [
       "Sit on one of the swings and have a friendly conversation with her",
     choice2:
       "Strike up a conversation and invite them to join a group of people at the slides",
+    id: "intvext",
+    key: "a",
   },
   {
     prompt:
@@ -15,6 +17,8 @@ const questions = [
     choice1:
       "Attend an event with a friend who share similar interest and values as you",
     choice2: "Meet up with a friend or a group of friends at a park",
+    id: "intvext",
+    key: "b",
   },
   {
     prompt:
@@ -23,6 +27,8 @@ const questions = [
     choice1:
       "Let me take some time to relax at home and respond to my friends later",
     choice2: "Open up about what I'm going through since I need some company",
+    id: "intvext",
+    key: "c",
   },
   {
     prompt:
@@ -31,6 +37,8 @@ const questions = [
     choice1:
       "Let me check the spelling and grammar once and move on, got other work to do",
     choice2: "I want to make my essay sound amazing. Let me work on it more",
+    id: "obsvint",
+    key: "d",
   },
   {
     prompt:
@@ -38,6 +46,8 @@ const questions = [
     image: "/question1.png",
     choice1: "Finish the race then take a photo after",
     choice2: "Slow down and smile, it's just a race anyway",
+    id: "obsvint",
+    key: "e",
   },
   {
     prompt: "What do you want to be when you grow up?",
@@ -45,6 +55,8 @@ const questions = [
     choice1: "The more money I earn, I can afford doing the things I love",
     choice2:
       "I want to pursue what I love doing the most, and then the money will come",
+    id: "obsvint",
+    key: "f",
   },
   {
     prompt:
@@ -52,6 +64,8 @@ const questions = [
     image: "/question7.png",
     choice1: "What a cute puppy! let me see if I got food with me",
     choice2: "Are you abandoned? let me check your name tag",
+    id: "thivfee",
+    key: "g",
   },
   {
     prompt:
@@ -61,6 +75,8 @@ const questions = [
       "More about the plot, analyzing character motivations and plot twists",
     choice2:
       "Invested in characters stories, seeing their struggles and celebrating with them",
+    id: "thivfee",
+    key: "h",
   },
   {
     prompt:
@@ -68,6 +84,8 @@ const questions = [
     image: "/question1.png",
     choice1: "Stealing food is still prohibited",
     choice2: "That's sad, having no money to buy food is hard in this economy",
+    id: "thivfee",
+    key: "i",
   },
   {
     prompt:
@@ -76,6 +94,8 @@ const questions = [
     choice1:
       "Let me stick to the same flavor, but if my friend says they like it then i'll probably try it",
     choice2: "Cool, a new flavor! let me give it a try",
+    id: "judvper",
+    key: "j",
   },
   {
     prompt:
@@ -83,6 +103,8 @@ const questions = [
     image: "/question1.png",
     choice1: "Search on google for planned activities and schedule them",
     choice2: "Find a busy area and see where people are going for fun",
+    id: "judvper",
+    key: "k",
   },
   {
     prompt:
@@ -90,6 +112,8 @@ const questions = [
     image: "/question1.png",
     choice1: "It's cheaper, and we can do it now?? Let's go!",
     choice2: "Reschedule at a later date, my time matters more than money",
+    id: "judvper",
+    key: "l",
   },
 ];
 
