@@ -3,7 +3,7 @@ import classNames from "../styles/styles";
 import Button from "./Button";
 import questions from "./Questions";
 
-const Quiz = ({ setAppState }) => {
+const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
   const [quizState, setQuizState] = useState(1);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [focusState1, setFocusState1] = useState("base");
@@ -203,7 +203,7 @@ const Quiz = ({ setAppState }) => {
                       setQuizState(2);
                     }, 1000);
                     setTimeout(() => {
-                      // alert([ie, oi, tf, jp]);
+                      setPersonalityType([ie, oi, tf, jp]);
                       setAppState("results");
                     }, 3000);
                   } else {

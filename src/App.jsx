@@ -7,6 +7,7 @@ import Results from "./components/Results";
 function App() {
   const [appState, setAppState] = useState("title");
   // const [scrollState, setScrollState] = useState(null);
+  const [personalityType, setPersonalityType] = useState([]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,10 +31,22 @@ function App() {
         renderedContent = <TitlePage setAppState={setAppState} />;
         break;
       case "questions":
-        renderedContent = <Quiz setAppState={setAppState} />;
+        renderedContent = (
+          <Quiz
+            personalityType={personalityType}
+            setPersonalityType={setPersonalityType}
+            setAppState={setAppState}
+          />
+        );
         break;
       case "results":
-        renderedContent = <Results setAppState={setAppState} />;
+        renderedContent = (
+          <Results
+            setAppState={setAppState}
+            personalityType={personalityType}
+            setPersonalityType={setPersonalityType}
+          />
+        );
         break;
     }
     return renderedContent;
