@@ -38,20 +38,51 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     }
   }, [personalityType]); // Run this effect when personalityType changes
 
+  function whichPalAreYou(personaType) {
+    let pal;
+    switch (personaType) {
+      case "introvert":
+        pal = <img src="/characters/milo.png"></img>;
+        break;
+      case "extrovert":
+        pal = <img src="/characters/duckie.png"></img>;
+        break;
+      case "observant":
+        pal = <img src="/characters/bari.png"></img>;
+        break;
+      case "intuitive":
+        pal = <img src="/characters/lu.png"></img>;
+        break;
+      case "feeler":
+        pal = <img src="/characters/spook.png"></img>;
+        break;
+      case "thinker":
+        pal = <img src="/characters/nom.png"></img>;
+        break;
+      case "judger":
+        pal = <img src="/characters/blinky.png"></img>;
+        break;
+      case "perceiver":
+        pal = <img src="/characters/misty.png"></img>;
+        break;
+    }
+    return pal;
+  }
+
   function viewPersonas(navNum) {
     let displayedPal;
     switch (navNum) {
       case 1:
-        displayedPal = persona1;
+        displayedPal = whichPalAreYou(persona1);
         break;
       case 2:
-        displayedPal = persona2;
+        displayedPal = whichPalAreYou(persona2);
         break;
       case 3:
-        displayedPal = persona3;
+        displayedPal = whichPalAreYou(persona3);
         break;
       case 4:
-        displayedPal = persona4;
+        displayedPal = whichPalAreYou(persona4);
         break;
       default:
         break;
@@ -99,14 +130,14 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
             <div className="w-full h-full grid grid-rows-2 grid-flow-col">
               <div className="bg-red-500 w-[100%] h-[100%] flex justify-center items-center">
                 {persona1 === "introvert" ? (
-                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[70%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/milo.png"
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[80%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/duckie.png"
@@ -116,14 +147,14 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
               </div>
               <div className="bg-blue-500 w-[100%] h-[100%] flex justify-center items-center">
                 {persona2 === "observant" ? (
-                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[90%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/bari.png"
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[80%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/lu.png"
@@ -133,14 +164,14 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
               </div>
               <div className="bg-yellow-500 w-[100%] h-[100%] flex justify-center items-center">
                 {persona3 === "feeler" ? (
-                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/spook.png"
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[90%] h-[70%]">
                     <img
                       className="w-full h-full"
                       src="/characters/nom.png"
@@ -150,14 +181,14 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
               </div>
               <div className="bg-green-500 w-[100%] h-[100%] flex justify-center items-center">
                 {persona4 === "judger" ? (
-                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[80%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/blinky.png"
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[90%] h-[60%]">
                     <img
                       className="w-full h-full"
                       src="/characters/misty.png"
@@ -166,6 +197,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 )}{" "}
               </div>
             </div>
+            <div className="w-full h-[10vh] bg-stone-500"></div>
           </div>
         );
     }
