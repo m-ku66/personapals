@@ -26,6 +26,19 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
 
   const currentQuestion = questions[currentQuestionIndex];
 
+  // Array to hold all image URLs
+  const imageUrls = questions.map((question) => question.image);
+
+  // useEffect to preload images
+  useEffect(() => {
+    const preloadedImages = [];
+    imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+      preloadedImages.push(img);
+    });
+  }, [imageUrls]);
+
   function handleButtonFocus(questionArray) {
     setCurrentAnswer(questionArray[1]);
     switch (questionArray[0]) {
@@ -36,6 +49,9 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
       case 2:
         setFocusState2("focus");
         setFocusState1("base");
+        break;
+      default:
+        break;
     }
   }
 
@@ -94,7 +110,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                   purpose={() => {
                     if (
                       currentQuestionIndex < questions.length - 1 &&
-                      currentAnswer != "No answer is currently selected..."
+                      currentAnswer !== "No answer is currently selected..."
                     ) {
                       //move to the next question
                       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -120,119 +136,89 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       //accumulate points towards personas
                       switch (currentQuestion.key) {
                         case "a":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the introverted option");
-                            setIe((prev) => prev + 1);
-                          } else {
-                            // alert("you selected the extroverted option");
-                            setIe((prev) => prev - 1);
-                          }
+                          setIe((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev + 1
+                              : prev - 1
+                          );
                           break;
                         case "b":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the extroverted option");
-                            setIe((prev) => prev - 1);
-                          } else {
-                            // alert("you selected the introverted option");
-                            setIe((prev) => prev + 1);
-                          }
+                          setIe((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev - 1
+                              : prev + 1
+                          );
                           break;
                         case "c":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the introverted option");
-                            setIe((prev) => prev + 1);
-                          } else {
-                            // alert("you selected the extroverted option");
-                            setIe((prev) => prev - 1);
-                          }
+                          setIe((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev + 1
+                              : prev - 1
+                          );
                           break;
                         case "d":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the observant option");
-                            setOi((prev) => prev + 1);
-                          } else {
-                            // alert("you selected the intuitive option");
-                            setOi((prev) => prev - 1);
-                          }
+                          setOi((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev + 1
+                              : prev - 1
+                          );
                           break;
                         case "e":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the intuitive option");
-                            setOi((prev) => prev - 1);
-                          } else {
-                            // alert("you selected the observant option");
-                            setOi((prev) => prev + 1);
-                          }
+                          setOi((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev - 1
+                              : prev + 1
+                          );
                           break;
                         case "f":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the observant option");
-                            setOi((prev) => prev + 1);
-                          } else {
-                            // alert("you selected the intuitive option");
-                            setOi((prev) => prev - 1);
-                          }
+                          setOi((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev + 1
+                              : prev - 1
+                          );
                           break;
                         case "g":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the feeler option");
-                            setTf((prev) => prev + 1);
-                          } else {
-                            // alert("you selected the thinker option");
-                            setTf((prev) => prev - 1);
-                          }
+                          setTf((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev + 1
+                              : prev - 1
+                          );
                           break;
                         case "h":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the thinker option");
-                            setTf((prev) => prev - 1);
-                          } else {
-                            // alert("you selected the feeler option");
-                            setTf((prev) => prev + 1);
-                          }
+                          setTf((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev - 1
+                              : prev + 1
+                          );
                           break;
                         case "i":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the thinker option");
-                            setTf((prev) => prev - 1);
-                          } else {
-                            // alert("you selected the feeler option");
-                            setTf((prev) => prev + 1);
-                          }
+                          setTf((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev - 1
+                              : prev + 1
+                          );
                           break;
                         case "j":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the judger option");
-                            setJp((prev) => prev + 1);
-                          } else {
-                            // alert("you selected the perceiver option");
-                            setJp((prev) => prev - 1);
-                          }
-                          break;
                         case "k":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the judger option");
-                            setJp((prev) => prev + 1);
-                          } else {
-                            // alert("you selected the perceiver option");
-                            setJp((prev) => prev - 1);
-                          }
+                          setJp((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev + 1
+                              : prev - 1
+                          );
                           break;
                         case "l":
-                          if (currentAnswer === currentQuestion.choice1) {
-                            // alert("you selected the perceiver option");
-                            setJp((prev) => prev - 1);
-                          } else {
-                            // alert("you selected the judger option");
-                            setJp((prev) => prev + 1);
-                          }
+                          setJp((prev) =>
+                            currentAnswer === currentQuestion.choice1
+                              ? prev - 1
+                              : prev + 1
+                          );
                           break;
                         default:
                           break;
                       }
                       setCurrentAnswer("No answer is currently selected...");
                     } else if (
-                      currentAnswer != "No answer is currently selected..." ||
+                      currentAnswer !== "No answer is currently selected." ||
                       currentQuestion === undefined
                     ) {
                       setTimeout(() => {
@@ -265,6 +251,8 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
           </div>
         );
         break;
+      default:
+        break;
     }
     return quizContent;
   }
@@ -288,3 +276,4 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
 };
 
 export default Quiz;
+
