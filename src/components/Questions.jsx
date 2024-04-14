@@ -2,7 +2,7 @@ const questions = [
   {
     prompt:
       "You're at a playground, and you notice someone sitting alone in the swings. How do you react?",
-    image: "/question1.png",
+    image: "/1.gif",
     choice1:
       "Sit on one of the swings and have a friendly conversation with her",
     choice2:
@@ -13,7 +13,7 @@ const questions = [
   {
     prompt:
       "You're at home feeling bored and unsure what to do. Which activities would you prefer?",
-    image: "/question1.png",
+    image: "/2.gif",
     choice1:
       "Attend an event with a friend who share similar interest and values as you",
     choice2: "Meet up with a friend or a group of friends at a park",
@@ -23,7 +23,7 @@ const questions = [
   {
     prompt:
       "Something bad happened and you're feeling stressed. How do you prefer to unwind?",
-    image: "/question1.png",
+    image: "/3.gif",
     choice1:
       "Let me take some time to relax at home and respond to my friends later",
     choice2: "Open up about what I'm going through since I need some company",
@@ -33,7 +33,7 @@ const questions = [
   {
     prompt:
       "You are working on an essay and notice that it is due in one hour. You manage to get the word count done, but still need to check your grammar and spelling. You also need to work on other assignments after.",
-    image: "/question1.png",
+    image: "/4.gif",
     choice1:
       "Let me check the spelling and grammar once and move on, got other work to do",
     choice2: "I want to make my essay sound amazing. Let me work on it more",
@@ -43,7 +43,7 @@ const questions = [
   {
     prompt:
       "The finish line is within reach, and you're about to be third place in the race! Suddenly, you spot your mom wanting to capture a photo of you. What do you do?",
-    image: "/question1.png",
+    image: "/5.gif",
     choice1: "Finish the race then take a photo after",
     choice2: "Slow down and smile, it's just a race anyway",
     id: "obsvint",
@@ -51,7 +51,7 @@ const questions = [
   },
   {
     prompt: "What do you want to be when you grow up?",
-    image: "/question1.png",
+    image: "/6.gif",
     choice1: "The more money I earn, I can afford doing the things I love",
     choice2:
       "I want to pursue what I love doing the most, and then the money will come",

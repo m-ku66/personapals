@@ -20,3 +20,207 @@ body {
     font-weight: 700;
     font-style: normal;
 }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0%
+    }
+
+    to {
+        opacity: 100%
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 100%
+    }
+
+    to {
+        opacity: 0%
+    }
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 100%
+    }
+
+    50% {
+        opacity: 0%
+    }
+
+    100% {
+        opacity: 100%
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideToLeft {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slideToRight {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(200%);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%)
+    }
+}
+
+
+
+/* Sliders */
+.slideFromLeft1 {
+    animation-name: slideFromLeft;
+    animation-duration: 0.5s;
+}
+
+.slideFromLeft2 {
+    animation-name: slideFromLeft;
+    animation-duration: 1s;
+}
+
+.slideFromLeft3 {
+    animation-name: slideFromLeft;
+    animation-duration: 1.5s;
+}
+
+.slideToLeft1 {
+    animation-name: slideToLeft;
+    animation-duration: 0.5s;
+}
+
+.slideToLeft2 {
+    animation-name: slideToLeft;
+    animation-duration: 1s;
+}
+
+.slideToLeft3 {
+    animation-name: slideToLeft;
+    animation-duration: 1.5s;
+}
+
+.slideFromRight1 {
+    animation-name: slideFromRight;
+    animation-duration: 0.5s;
+}
+
+.slideFromRight2 {
+    animation-name: slideFromRight;
+    animation-duration: 1s;
+}
+
+.slideFromRight3 {
+    animation-name: slideFromRight;
+    animation-duration: 1.5s;
+}
+
+.slideToRight1 {
+    animation-name: slideToRight;
+    animation-duration: 0.5s;
+}
+
+.slideToRight2 {
+    animation-name: slideToRight;
+    animation-duration: 1s;
+}
+
+.slideToRight3 {
+    animation-name: slideToRight;
+    animation-duration: 1.5s;
+}
+
+.slideUp1 {
+    animation-name: slideUp;
+    animation-duration: 0.5s;
+}
+
+.slideUp2 {
+    animation-name: slideUp;
+    animation-duration: 1s;
+}
+
+.slideUp3 {
+    animation-name: slideUp;
+    animation-duration: 1.5s;
+}
+
+
+/* Fades */
+.fadeIn1 {
+    animation-name: fadeIn;
+    animation-duration: 1s;
+}
+
+.fadeIn2 {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+}
+
+.fadeIn3 {
+    animation-name: fadeIn;
+    animation-duration: 5s;
+}
+
+.fadeIn4 {
+    animation-name: fadeIn;
+    animation-duration: 7s;
+}
+
+.fadeOut1 {
+    animation-name: fadeOut;
+    animation-duration: 1s;
+}
+
+.fadeOut2 {
+    animation-name: fadeOut;
+    animation-duration: 3s;
+}
+
+.fadeOut3 {
+    animation-name: fadeOut;
+    animation-duration: 5s;
+}
+
+.fadeOut4 {
+    animation-name: fadeOut;
+    animation-duration: 7s;
+}

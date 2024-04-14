@@ -3,8 +3,11 @@ import classNames from "./styles/styles";
 import TitlePage from "./components/TitlePage";
 import Quiz from "./components/Quiz";
 import Results from "./components/Results";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  AOS.init();
   const [appState, setAppState] = useState("title");
   // const [scrollState, setScrollState] = useState(null);
   const [personalityType, setPersonalityType] = useState([]);
