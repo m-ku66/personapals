@@ -94,18 +94,77 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
         break;
       case "final":
         results = (
-          <div className="w-full h-full grid grid-rows-2 grid-flow-col">
-            <div className="bg-red-500 w-[100%] h-[100%] flex justify-center items-center">
-              {persona1}
-            </div>
-            <div className="bg-blue-500 w-[100%] h-[100%] flex justify-center items-center">
-              {persona2}
-            </div>
-            <div className="bg-yellow-500 w-[100%] h-[100%] flex justify-center items-center">
-              {persona3}
-            </div>
-            <div className="bg-green-500 w-[100%] h-[100%] flex justify-center items-center">
-              {persona4}
+          <div className="w-full h-full flex flex-col">
+            <div className="w-full h-[20vh] bg-stone-500"></div>
+            <div className="w-full h-full grid grid-rows-2 grid-flow-col">
+              <div className="bg-red-500 w-[100%] h-[100%] flex justify-center items-center">
+                {persona1 === "introvert" ? (
+                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                    <img
+                      className="w-full h-full"
+                      src="/characters/milo.png"
+                    ></img>
+                  </div>
+                ) : (
+                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                    <img
+                      className="w-full h-full"
+                      src="/characters/duckie.png"
+                    ></img>
+                  </div>
+                )}
+              </div>
+              <div className="bg-blue-500 w-[100%] h-[100%] flex justify-center items-center">
+                {persona2 === "observant" ? (
+                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                    <img
+                      className="w-full h-full"
+                      src="/characters/bari.png"
+                    ></img>
+                  </div>
+                ) : (
+                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                    <img
+                      className="w-full h-full"
+                      src="/characters/lu.png"
+                    ></img>
+                  </div>
+                )}
+              </div>
+              <div className="bg-yellow-500 w-[100%] h-[100%] flex justify-center items-center">
+                {persona3 === "feeler" ? (
+                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                    <img
+                      className="w-full h-full"
+                      src="/characters/spook.png"
+                    ></img>
+                  </div>
+                ) : (
+                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                    <img
+                      className="w-full h-full"
+                      src="/characters/nom.png"
+                    ></img>
+                  </div>
+                )}{" "}
+              </div>
+              <div className="bg-green-500 w-[100%] h-[100%] flex justify-center items-center">
+                {persona4 === "judger" ? (
+                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                    <img
+                      className="w-full h-full"
+                      src="/characters/blinky.png"
+                    ></img>
+                  </div>
+                ) : (
+                  <div className="bg-stone-400 flex justify-center items-center w-[80%] h-[80%]">
+                    <img
+                      className="w-full h-full"
+                      src="/characters/misty.png"
+                    ></img>
+                  </div>
+                )}{" "}
+              </div>
             </div>
           </div>
         );
