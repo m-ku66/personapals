@@ -17,6 +17,12 @@ const Button = ({ buttonText, purpose, to, type }) => {
         break;
       case "focus":
         btnStyle = classNames.button_focus;
+        break;
+      case "results":
+        btnStyle = classNames.button_results;
+        break;
+      default:
+        break;
     }
     return btnStyle;
   }

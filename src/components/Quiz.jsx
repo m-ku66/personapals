@@ -276,4 +276,3 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
 };
 
 export default Quiz;
-

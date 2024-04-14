@@ -15,8 +15,18 @@ const classNames = {
     "px-[2.3rem] py-[0.5rem] bg-[#D8D7FF]/[0.5] rounded cursor-pointer select-none w-fit h-fit text-center",
   button_focus:
     "px-[2.3rem] py-[0.5rem] bg-[#D8D7FF] rounded cursor-pointer select-none w-fit h-fit text-center",
+  button_results:
+    "mx-[10%] px-[2.3rem] py-[0.5rem] bg-[#D8D7FF]/[0.5] rounded-[2rem] cursor-pointer select-none w-fit h-fit text-center",
   mobile_display: "sm:flex md:hidden",
   desktop_display: "hidden md:block",
+  container_millo: "container max-w-full h-screen bg-[#FFD0B9]",
+  container_duckie: "container max-w-full h-screen bg-[#BBEEFF]",
+  container_bari: "container max-w-full h-screen bg-[#B4FFC7]",
+  container_lu: "container max-w-full h-screen bg-[#FFE98B]",
+  container_nom: "container max-w-full h-screen bg-[#FFD1EB]",
+  container_spook: "container max-w-full h-screen bg-[#C5C6FF]",
+  container_blinky: "container max-w-full h-screen bg-[#EAD4FF]",
+  container_misty: "container max-w-full h-screen bg-[#FFCD93]",
 };
 
 export default classNames;
