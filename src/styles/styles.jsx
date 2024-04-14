@@ -16,7 +16,7 @@ const classNames = {
   button_focus:
     "px-[2.3rem] py-[0.5rem] bg-[#D8D7FF] rounded cursor-pointer select-none w-fit h-fit text-center",
   button_results:
-    "mx-[10%] px-[2.3rem] py-[0.5rem] bg-[#D8D7FF]/[0.5] rounded-[2rem] cursor-pointer select-none w-fit h-fit text-center",
+    "mx-[10%] px-[2.3rem] py-[0.5rem] bg-[#FFFFFF]/[0.8] rounded-[2rem] cursor-pointer select-none w-fit h-fit text-center",
   mobile_display: "sm:flex md:hidden",
   desktop_display: "hidden md:block",
   container_millo: "container max-w-full h-screen bg-[#FFD0B9]",

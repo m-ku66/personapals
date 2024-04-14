@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classNames from "../styles/styles";
 
-const Button = ({ buttonText, purpose, to, type }) => {
+const Button = ({ buttonText, purpose, to, type, textColor }) => {
   const titleText = "mulish text-[1rem] text-[#8886D9]";
   const whiteText = "mulish text-white text-[0.8rem]";
 
@@ -29,7 +29,16 @@ const Button = ({ buttonText, purpose, to, type }) => {
 
   return (
     <div onClick={() => purpose(to)} className={renderClass(type)}>
-      <p className={type === "start" ? titleText : whiteText}>{buttonText}</p>
+      {type === "results" ? (
+        <p
+          style={{ color: `${textColor}` }}
+          className={`mulishBold text-[0.8rem]`}
+        >
+          {buttonText}
+        </p>
+      ) : (
+        <p className={type === "start" ? titleText : whiteText}>{buttonText}</p>
+      )}
     </div>
   );
 };

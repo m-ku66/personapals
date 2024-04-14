@@ -38,33 +38,57 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     }
   }, [personalityType]); // Run this effect when personalityType changes
 
+  // Array to hold all image URLs
+  const imageUrls = [
+    "/characters/milo.png",
+    "/characters/duckie.png",
+    "/characters/bari.png",
+    "/characters/lu.png",
+    "/characters/spook.png",
+    "/characters/nom.png",
+    "/characters/blinky.png",
+    "/characters/misty.png",
+  ];
+
+  // useEffect to preload images
+  useEffect(() => {
+    const preloadedImages = [];
+    imageUrls.forEach((url) => {
+      const img = new Image();
+      img.src = url;
+      preloadedImages.push(img);
+    });
+  }, []); // Empty dependency array to run once when the component mounts
+
   function whichPalAreYou(personaType) {
     let pal;
     switch (personaType) {
       case "introvert":
-        pal = <img src="/characters/milo.png"></img>;
+        pal = <img src="/characters/milo.png" alt="Milo"></img>;
         break;
       case "extrovert":
-        pal = <img src="/characters/duckie.png"></img>;
+        pal = <img src="/characters/duckie.png" alt="Duckie"></img>;
         break;
       case "observant":
-        pal = <img src="/characters/bari.png"></img>;
+        pal = <img src="/characters/bari.png" alt="Bari"></img>;
         break;
       case "intuitive":
-        pal = <img src="/characters/lu.png"></img>;
+        pal = <img src="/characters/lu.png" alt="Lu"></img>;
         break;
       case "feeler":
-        pal = <img src="/characters/spook.png"></img>;
+        pal = <img src="/characters/spook.png" alt="Spook"></img>;
         break;
       case "thinker":
-        pal = <img src="/characters/nom.png"></img>;
+        pal = <img src="/characters/nom.png" alt="Nom"></img>;
         break;
       case "judger":
-        pal = <img src="/characters/blinky.png"></img>;
+        pal = <img src="/characters/blinky.png" alt="Blinky"></img>;
         break;
       case "perceiver":
-        pal = <img src="/characters/misty.png"></img>;
+        pal = <img src="/characters/misty.png" alt="Misty"></img>;
         break;
+      default:
+        pal = null;
     }
     return pal;
   }
@@ -85,7 +109,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
         displayedPal = whichPalAreYou(persona4);
         break;
       default:
-        break;
+        displayedPal = null;
     }
     return displayedPal;
   }
@@ -96,7 +120,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
       case 1:
         resultsText = [
           `Your energy comes from`,
-          `${persona1 === "introvert" ? "millo" : "Duckie"}`,
+          `${persona1 === "introvert" ? "Milo" : "Duckie"}`,
           `${
             persona1 === "introvert"
               ? "Well-suited to Many Situations"
@@ -112,7 +136,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
       case 2:
         resultsText = [
           `Your reaction comes from`,
-          `${persona2 === "observant" ? "BARI" : "LU"}`,
+          `${persona2 === "observant" ? "Bari" : "Lu"}`,
           `${
             persona2 === "observant"
               ? "Do what works"
@@ -128,7 +152,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
       case 3:
         resultsText = [
           `You make decisions like`,
-          `${persona3 === "feeler" ? "SPOOK" : "nom"}`,
+          `${persona3 === "feeler" ? "Spook" : "Nom"}`,
           `${
             persona3 === "feeler"
               ? "Who does this help?"
@@ -144,7 +168,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
       case 4:
         resultsText = [
           `You are organized like`,
-          `${persona4 === "judger" ? "BLINKY" : "misty"}`,
+          `${persona4 === "judger" ? "Blinky" : "Misty"}`,
           `${
             persona4 === "judger" ? "Sticks to the plan" : "Go with the flow"
           }`,
@@ -163,31 +187,46 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
 
   function renderBG(navNum) {
     let bg;
+    let bgColor;
+    let resultsPageBG;
+
     switch (navNum) {
       case 1:
-        persona1 === "introvert"
-          ? (bg = classNames.container_millo)
-          : (bg = classNames.container_duckie);
+        bg =
+          persona1 === "introvert"
+            ? classNames.container_millo
+            : classNames.container_duckie;
+        bgColor = persona1 === "introvert" ? "#FF7C87" : "#81B0FF";
+        resultsPageBG = persona1 === "introvert" ? "#FFD0B9" : "#BBEEFF";
         break;
       case 2:
-        persona2 === "observant"
-          ? (bg = classNames.container_bari)
-          : (bg = classNames.container_lu);
+        bg =
+          persona2 === "observant"
+            ? classNames.container_bari
+            : classNames.container_lu;
+        bgColor = persona2 === "observant" ? "#57C395" : "#FC8F68";
+        resultsPageBG = persona2 === "observant" ? "#B4FFC7" : "#FFE98B";
         break;
       case 3:
-        persona3 === "feeler"
-          ? (bg = classNames.container_spook)
-          : (bg = classNames.container_nom);
+        bg =
+          persona3 === "feeler"
+            ? classNames.container_spook
+            : classNames.container_nom;
+        bgColor = persona3 === "feeler" ? "#8886D9" : "#FF7885";
+        resultsPageBG = persona3 === "feeler" ? "#C5C6FF" : "#FFD1EB";
         break;
       case 4:
-        persona4 === "judger"
-          ? (bg = classNames.container_blinky)
-          : (bg = classNames.container_misty);
+        bg =
+          persona4 === "judger"
+            ? classNames.container_blinky
+            : classNames.container_misty;
+        bgColor = persona4 === "judger" ? "#8886D9" : "#FC8F68";
+        resultsPageBG = persona4 === "judger" ? "#EAD4FF" : "#FFCD93";
         break;
       default:
         bg = classNames.container;
     }
-    return bg;
+    return [bg, bgColor, resultsPageBG];
   }
 
   function renderResults(state) {
@@ -203,7 +242,10 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                   {" "}
                   {personaNav <= 4 && renderText(personaNav)[0]}
                 </p>
-                <p className="montserratBold text-[3rem]">
+                <p
+                  style={{ color: `${renderBG(personaNav)[1]}` }}
+                  className="montserratBold text-[3rem]"
+                >
                   {" "}
                   {personaNav <= 4 && renderText(personaNav)[1]}
                 </p>
@@ -213,7 +255,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
             <p className="mulishBold text-center mb-[3%]">
               {personaNav <= 4 && renderText(personaNav)[2]}
             </p>
-            <p className="mulish text-center text-[0.85rem] w-[90%]">
+            <p className="mulish text-center text-black/[0.7] text-[0.85rem] w-[80%]">
               {personaNav <= 4 && renderText(personaNav)[3]}
             </p>
             <div className="absolute bottom-[10%] flex justify-center items-center">
@@ -226,6 +268,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 }
                 to={""}
                 type={"results"}
+                textColor={renderBG(personaNav)[1]}
               />
               <Button
                 buttonText={"Next"}
@@ -236,6 +279,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 }
                 to={""}
                 type={"results"}
+                textColor={renderBG(personaNav)[1]}
               />
             </div>
           </div>
@@ -244,14 +288,18 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
       case "final":
         results = (
           <div className="w-full h-full flex flex-col">
-            <div className="w-full h-[20vh] bg-stone-500"></div>
+            <div className="w-full h-[15vh] bg-[#8886D90]"></div>
             <div className="w-full h-full grid grid-rows-2 grid-flow-col">
-              <div className="bg-red-500 w-[100%] h-[100%] flex justify-center items-center">
+              <div
+                style={{ backgroundColor: `${renderBG(1)[2]}` }}
+                className="w-[100%] h-[100%] flex justify-center items-center"
+              >
                 {persona1 === "introvert" ? (
                   <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/milo.png"
+                      alt="Milo"
                     ></img>
                   </div>
                 ) : (
@@ -259,16 +307,21 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     <img
                       className="w-full h-full"
                       src="/characters/duckie.png"
+                      alt="Duckie"
                     ></img>
                   </div>
                 )}
               </div>
-              <div className="bg-blue-500 w-[100%] h-[100%] flex justify-center items-center">
+              <div
+                style={{ backgroundColor: `${renderBG(2)[2]}` }}
+                className="w-[100%] h-[100%] flex justify-center items-center"
+              >
                 {persona2 === "observant" ? (
                   <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/bari.png"
+                      alt="Bari"
                     ></img>
                   </div>
                 ) : (
@@ -276,16 +329,21 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     <img
                       className="w-full h-full"
                       src="/characters/lu.png"
+                      alt="Lu"
                     ></img>
                   </div>
                 )}
               </div>
-              <div className="bg-yellow-500 w-[100%] h-[100%] flex justify-center items-center">
+              <div
+                style={{ backgroundColor: `${renderBG(3)[2]}` }}
+                className="w-[100%] h-[100%] flex justify-center items-center"
+              >
                 {persona3 === "feeler" ? (
                   <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/spook.png"
+                      alt="Spook"
                     ></img>
                   </div>
                 ) : (
@@ -293,16 +351,21 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     <img
                       className="w-full h-full"
                       src="/characters/nom.png"
+                      alt="Nom"
                     ></img>
                   </div>
                 )}{" "}
               </div>
-              <div className="bg-green-500 w-[100%] h-[100%] flex justify-center items-center">
+              <div
+                style={{ backgroundColor: `${renderBG(4)[2]}` }}
+                className="w-[100%] h-[100%] flex justify-center items-center"
+              >
                 {persona4 === "judger" ? (
                   <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
                     <img
                       className="w-full h-full"
                       src="/characters/blinky.png"
+                      alt="Blinky"
                     ></img>
                   </div>
                 ) : (
@@ -310,12 +373,13 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     <img
                       className="w-full h-full"
                       src="/characters/misty.png"
+                      alt="Misty"
                     ></img>
                   </div>
                 )}{" "}
               </div>
             </div>
-            <div className="w-full h-[10vh] bg-stone-500"></div>
+            <div className="w-full h-[12vh] bg-[#8886D90]"></div>
           </div>
         );
     }
@@ -325,7 +389,9 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
 
   return (
     <>
-      <div className={renderBG(personaNav)}>{renderResults(resultsState)}</div>
+      <div className={renderBG(personaNav)[0]}>
+        {renderResults(resultsState)}
+      </div>
     </>
   );
 };

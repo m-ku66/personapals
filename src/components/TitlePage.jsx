@@ -16,6 +16,7 @@ const TitlePage = ({ setAppState }) => {
                 purpose={setAppState}
                 to={"questions"}
                 type={"start"}
+                textColor={""}
               />
             </div>
           </div>

@@ -87,6 +87,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                   purpose={handleButtonFocus}
                   to={[1, currentQuestion.choice1]}
                   type={focusState1}
+                  textColor={""}
                 />
               </div>
               <div className="py-[0.5rem]"></div>
@@ -96,6 +97,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                   purpose={handleButtonFocus}
                   to={[2, currentQuestion.choice2]}
                   type={focusState2}
+                  textColor={""}
                 />
               </div>
 
@@ -236,6 +238,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                   }}
                   to={""}
                   type={"start"}
+                  textColor={""}
                 />
               </div>
             </div>
