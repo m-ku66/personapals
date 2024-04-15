@@ -35,6 +35,12 @@ body {
     font-style: normal;
 }
 
+.montserratDark {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 .montserratBold {
     font-family: "Montserrat Alternates", sans-serif;
     font-weight: 700;

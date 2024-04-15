@@ -120,7 +120,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
       case 1:
         resultsText = [
           `Your energy comes from`,
-          `${persona1 === "introvert" ? "Milo" : "Duckie"}`,
+          `${persona1 === "introvert" ? "Millo" : "Duckie"}`,
           `${
             persona1 === "introvert"
               ? "Well-suited to Many Situations"
@@ -229,6 +229,20 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     return [bg, bgColor, resultsPageBG];
   }
 
+  function renderPersonaType(p1, p2, p3, p4) {
+    let introText;
+    let displayedPersona;
+
+    switch ((p1, p2, p3, p4)) {
+      case ("introvert", "observant", "feeler", "judger"):
+        introText = "Name, you are an";
+        displayedPersona = "Embracer";
+        break;
+    }
+    // console.log(persona);
+    return [introText, displayedPersona];
+  }
+
   function renderResults(state) {
     let results;
 
@@ -288,14 +302,39 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
       case "final":
         results = (
           <div className="w-full h-full flex flex-col">
-            <div className="w-full h-[15vh] bg-[#8886D90]"></div>
+            <div className="flex w-full h-[15vh] bg-[#8886D90]">
+              <div className="flex flex-col w-[40%] h-full bg-transparent py-[3%]">
+                <div className="flex items-center justify-center">
+                  <div
+                    onClick={() => alert("Go back?")}
+                    className="bg-[#D8D7FF] select-none cursor-pointer flex justify-center items-center rounded-[500px] w-[15px] h-[15px] mr-[5%]"
+                  >
+                    <p className="text-[0.8rem] montserratDark">{"<"}</p>
+                  </div>
+                  <p className="text-[#D8D7FF] montserratDark text-[0.8rem] text-center">
+                    Go back
+                  </p>
+                </div>
+                <p className="text-white montserratDark text-[1rem] text-center">
+                  Personality Test Result:
+                </p>
+              </div>
+              <div className="py-[2%] flex items-center flex-col w-[60%] h-full bg-[#D8D7FF]">
+                <p className="text-center text-[1rem] montserratDark">{`${
+                  renderPersonaType(persona1, persona2, persona3, persona4)[0]
+                }`}</p>
+                <p className="text-center text-[#434185] text-[2rem] montserratBold">{`${
+                  renderPersonaType(persona1, persona2, persona3, persona4)[1]
+                }`}</p>
+              </div>
+            </div>
             <div className="w-full h-full grid grid-rows-2 grid-flow-col">
               <div
                 style={{ backgroundColor: `${renderBG(1)[2]}` }}
-                className="w-[100%] h-[100%] flex justify-center items-center"
+                className="relative w-[100%] h-[100%] flex justify-center items-center"
               >
                 {persona1 === "introvert" ? (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[70%]">
                     <img
                       className="w-full h-full"
                       src="/characters/milo.png"
@@ -311,10 +350,15 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     ></img>
                   </div>
                 )}
+                <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
+                  <p className="montserratBold text-[black]/[0.6]">
+                    {persona1 === "introvert" ? "millo" : "Duckie"}
+                  </p>
+                </div>
               </div>
               <div
                 style={{ backgroundColor: `${renderBG(2)[2]}` }}
-                className="w-[100%] h-[100%] flex justify-center items-center"
+                className="relative w-[100%] h-[100%] flex justify-center items-center"
               >
                 {persona2 === "observant" ? (
                   <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
@@ -333,10 +377,15 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     ></img>
                   </div>
                 )}
+                <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
+                  <p className="montserratBold text-[black]/[0.6]">
+                    {persona2 === "observant" ? "BARI" : "LU"}
+                  </p>
+                </div>
               </div>
               <div
                 style={{ backgroundColor: `${renderBG(3)[2]}` }}
-                className="w-[100%] h-[100%] flex justify-center items-center"
+                className="relative w-[100%] h-[100%] flex justify-center items-center"
               >
                 {persona3 === "feeler" ? (
                   <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
@@ -354,14 +403,19 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                       alt="Nom"
                     ></img>
                   </div>
-                )}{" "}
+                )}
+                <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
+                  <p className="montserratBold text-[black]/[0.6]">
+                    {persona3 === "feeler" ? "SPOOK" : "nom"}
+                  </p>
+                </div>
               </div>
               <div
                 style={{ backgroundColor: `${renderBG(4)[2]}` }}
-                className="w-[100%] h-[100%] flex justify-center items-center"
+                className="relative w-[100%] h-[100%] flex justify-center items-center"
               >
                 {persona4 === "judger" ? (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[70%]">
                     <img
                       className="w-full h-full"
                       src="/characters/blinky.png"
@@ -376,10 +430,27 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                       alt="Misty"
                     ></img>
                   </div>
-                )}{" "}
+                )}
+                <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
+                  <p className="montserratBold text-[black]/[0.6]">
+                    {persona4 === "judger" ? "BLINKY" : "misty"}
+                  </p>
+                </div>
               </div>
             </div>
-            <div className="w-full h-[12vh] bg-[#8886D90]"></div>
+            <div className="flex flex-col w-full h-[15vh] bg-[#8886D90]">
+              <div className="flex w-full h-[50%] bg-[#D8D7FF]">
+                <div className="bg-red-500 w-[50%]"></div>
+                <div className="bg-blue-500 w-[50%]"></div>
+              </div>
+              <div className="flex items-center w-full h-[50%] bg-transparent">
+                <img
+                  className="ml-[5%]"
+                  src="/pp_logo.png"
+                  alt="Persona Pals logo"
+                />
+              </div>
+            </div>
           </div>
         );
     }
