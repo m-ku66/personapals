@@ -234,9 +234,13 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     let displayedPersona;
 
     switch ((p1, p2, p3, p4)) {
-      case ("introvert", "observant", "feeler", "judger"):
+      case ("introvert", "intuitive", "feeler", "judger"):
         introText = "Name, you are an";
         displayedPersona = "Embracer";
+        break;
+      case ("extrovert", "intuitive", "thinker", "perceiver"):
+        introText = "Name, you are a";
+        displayedPersona = "Player";
         break;
     }
     // console.log(persona);
@@ -396,7 +400,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
+                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[70%]">
                     <img
                       className="w-full h-full"
                       src="/characters/nom.png"

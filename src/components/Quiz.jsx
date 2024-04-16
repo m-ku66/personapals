@@ -229,7 +229,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       setTimeout(() => {
                         setPersonalityType([ie, oi, tf, jp]);
                         setAppState("results");
-                      }, 3000);
+                      }, 5000);
                     } else {
                       alert(
                         "Bro's ignoring the questions and trying to leave!"
@@ -248,9 +248,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
       case 2:
         quizContent = (
           <div className={classNames.container_fit_column_center}>
-            <p className={`${fadeState2} b-[1rem] w-[80%] text-center`}>
-              {"Loading..."}
-            </p>
+            <img className={`${fadeState2}`} src="/loading.gif" alt="" />
           </div>
         );
         break;

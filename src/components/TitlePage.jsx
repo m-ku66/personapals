@@ -9,12 +9,12 @@ const TitlePage = ({ setAppState }) => {
       <div className={classNames.container}>
         <div className={classNames.container_fill_center}>
           <div className={classNames.container_fit_column_center}>
-            <img className="mb-[2rem]" src="/title.svg" alt="Persona Pals!" />
+            <img className="mb-[2rem]" src="/title.gif" alt="Persona Pals!" />
             <div className="slideUp3">
               <Button
                 buttonText={"start"}
                 purpose={setAppState}
-                to={"questions"}
+                to={"intro"}
                 type={"start"}
                 textColor={""}
               />
