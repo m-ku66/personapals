@@ -72,7 +72,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
             >
               <div className={slideState2}>
                 <div className={classNames.container_fit_column_center}>
-                  <p className="mulishBold text-white mb-[0.7rem] w-[95%] text-center text-[0.8rem]">
+                  <p className="mulishBold text-white mb-[0.7rem] w-[95%] text-center text-[1.1rem]">
                     {currentQuestion.prompt}
                   </p>
                   <img
@@ -264,7 +264,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
       <div className={classNames.container_fill_padding}>
         <div className="relative w-full h-full flex flex-col items-center justify-center">
           <div
-            className={`${fadeState2} text-[0.7rem] mulish text-white absolute top-[5%] mb-[1rem]`}
+            className={`${fadeState2} text-[0.9rem] mulish text-white absolute top-[5%] mb-[1rem]`}
           >
             {quizState === 1
               ? `${currentQuestionIndex + 1} of ${questions.length}`

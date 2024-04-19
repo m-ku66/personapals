@@ -511,8 +511,12 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
             </div>
             <div className="flex flex-col w-full h-[15vh] bg-[#8886D90]">
               <div className="flex w-full h-[50%] bg-[#D8D7FF]">
-                <div className="bg-red-500 w-[50%]"></div>
-                <div className="bg-blue-500 w-[50%]"></div>
+                <div className="bg-red-500 w-[50%]">
+                  <p>most compatible</p>
+                </div>
+                <div className="bg-blue-500 w-[50%]">
+                  <p>least compatible</p>
+                </div>
               </div>
               <div className="flex items-center w-full h-[50%] bg-transparent">
                 <img

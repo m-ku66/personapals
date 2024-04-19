@@ -11,7 +11,7 @@ const Intro = ({ setAppState }) => {
           className={classNames.container_fill_center}
         >
           <div
-            style={{ position: "absolute", top: "10%" }}
+            style={{ position: "absolute", top: "5%" }}
             className={classNames.container_fit_column_center}
           >
             <p className="text-center text-[1.1rem] montserratDark w-[80%] text-white mb-[15%]">
