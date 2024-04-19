@@ -220,7 +220,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       }
                       setCurrentAnswer("No answer is currently selected...");
                     } else if (
-                      currentAnswer !== "No answer is currently selected." ||
+                      currentQuestionIndex === questions.length - 1 ||
                       currentQuestion === undefined
                     ) {
                       setTimeout(() => {
