@@ -9,6 +9,7 @@ const classNames = {
     "w-full h-full flex flex-col items-center justify-center",
   container_fit_center: "w-fit h-fit flex items-center justify-center",
   container_fit_column_center: "w-fit h-fit flex flex-col items-center",
+  container_fit_column_center2: "w-fit h-fit flex flex-col justify-center",
   button:
     "px-[3rem] py-[0.5rem] bg-[#D8D7FF] rounded-[2rem] cursor-pointer select-none w-fit h-fit text-center",
   button_light:

@@ -232,15 +232,82 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
   function renderPersonaType(p1, p2, p3, p4) {
     let introText;
     let displayedPersona;
+    let mostCompatible;
+    let leastCompatible;
 
-    switch ((p1, p2, p3, p4)) {
-      case ("introvert", "intuitive", "feeler", "judger"):
+    switch (true) {
+      case ((p1, p2, p3, p4) === (p1, p2, p3, p4)) ===
+        ("introvert", "intuitive", "feeler", "judger"):
         introText = "Name, you are an";
         displayedPersona = "Embracer";
         break;
-      case ("extrovert", "intuitive", "thinker", "perceiver"):
+      case (p1, p2, p3, p4) ===
+        ("extrovert", "intuitive", "thinker", "perceiver"):
         introText = "Name, you are a";
         displayedPersona = "Player";
+        break;
+      case (p1, p2, p3, p4) ===
+        ("introvert", "intuitive", "thinker", "perceiver"):
+        introText = "Name, you are a";
+        displayedPersona = "Pioneer";
+        break;
+      case (p1, p2, p3, p4) ===
+        ("extrovert", "observant", "feeler", "perceiver"):
+        introText = "Name, you are a";
+        displayedPersona = "Charmer";
+        break;
+      case (p1, p2, p3, p4) === ("introvert", "intuitve", "feeler", "judger"):
+        introText = "Name, you are a";
+        displayedPersona = "Creator";
+        break;
+      case (p1, p2, p3, p4) ===
+        ("introvert", "observant", "thinker", "perceiver"):
+        introText = "Name, you are an";
+        displayedPersona = "Inventor";
+        break;
+      case (p1, p2, p3, p4) ===
+        ("extrovert", "observant", "thinker", "perceiver"):
+        introText = "Name, you are an";
+        displayedPersona = "Adventurer";
+        break;
+      case (p1, p2, p3, p4) === ("introvert", "observant", "thinker", "judger"):
+        introText = "Name, you are a";
+        displayedPersona = "Reader";
+        break;
+      case (p1, p2, p3, p4) === ("introvert", "observant", "feeler", "judger"):
+        introText = "Name, you are a";
+        displayedPersona = "Protector";
+        break;
+      case (p1, p2, p3, p4) ===
+        ("introvert", "intuitive", "feeler", "perceiver"):
+        introText = "Name, you are a";
+        displayedPersona = "Daydreamer";
+        break;
+      case (p1, p2, p3, p4) === ("introvert", "intuitive", "thinker", "judger"):
+        introText = "Name, you are a";
+        displayedPersona = "Gambler";
+        break;
+      case (p1, p2, p3, p4) ===
+        ("introvert", "observant", "feeler", "perceiver"):
+        introText = "Name, you are a";
+        displayedPersona = "Painter";
+        break;
+      case (p1, p2, p3, p4) === ("extrovert", "intuitive", "thinker", "judger"):
+        introText = "Name, you are a";
+        displayedPersona = "Collaborator";
+        break;
+      case (p1, p2, p3, p4) === ("extrovert", "observant", "feeler", "judger"):
+        introText = "Name, you are a";
+        displayedPersona = "Caregiver";
+        break;
+      case (p1, p2, p3, p4) ===
+        ("extrovert", "intuitive", "feeler", "perceiver"):
+        introText = "Name, you are a";
+        displayedPersona = "Entertainer";
+        break;
+      case (p1, p2, p3, p4) === ("extrovert", "observant", "thinker", "judger"):
+        introText = "Name, you are a";
+        displayedPersona = "Judger";
         break;
     }
     // console.log(persona);

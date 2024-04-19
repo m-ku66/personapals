@@ -7,8 +7,14 @@ const TitlePage = ({ setAppState }) => {
   return (
     <div className="slideUp2">
       <div className={classNames.container}>
-        <div className={classNames.container_fill_center}>
-          <div className={classNames.container_fit_column_center}>
+        <div
+          style={{ position: "relative" }}
+          className={classNames.container_fill_center}
+        >
+          <div
+            style={{ position: "absolute", top: "15%" }}
+            className={classNames.container_fit_column_center}
+          >
             <img className="mb-[2rem]" src="/title.gif" alt="Persona Pals!" />
             <div className="slideUp3">
               <Button
