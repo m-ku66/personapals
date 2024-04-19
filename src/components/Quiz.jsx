@@ -67,6 +67,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
         quizContent = (
           <>
             <div
+              style={{ position: "absolute", top: "15%" }}
               className={`${slideState1} w-[88%] h-[88%] flex flex-col items-center`}
             >
               <div className={slideState2}>
@@ -263,7 +264,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
       <div className={classNames.container_fill_padding}>
         <div className="relative w-full h-full flex flex-col items-center justify-center">
           <div
-            className={`${fadeState2} text-[0.7rem] mulish text-white absolute top-[3%] mb-[1rem]`}
+            className={`${fadeState2} text-[0.7rem] mulish text-white absolute top-[5%] mb-[1rem]`}
           >
             {quizState === 1
               ? `${currentQuestionIndex + 1} of ${questions.length}`
