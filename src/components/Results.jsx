@@ -511,11 +511,25 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
             </div>
             <div className="flex flex-col w-full h-[15vh] bg-[#8886D90]">
               <div className="flex w-full h-[50%] bg-[#D8D7FF]">
-                <div className="bg-red-500 w-[50%]">
-                  <p>most compatible</p>
+                <div className="flex items-center bg-[#D8D7FF] w-[50%]">
+                  <p className="montserratDark ml-[5%] mr-[5%] w-[30%] leading-[1rem] text-[0.8rem]">
+                    most compatible
+                  </p>
+                  <div className="p-[1%] w-fit bg-[#FFFFFF]">
+                    <p className="montserratDark ml-[30%] w-[100%] leading-[1rem] text-[0.7rem]">
+                      Testtext & something
+                    </p>
+                  </div>
                 </div>
-                <div className="bg-blue-500 w-[50%]">
-                  <p>least compatible</p>
+                <div className="flex items-center bg-[#D8D7FF] w-[50%]">
+                  <p className="montserratDark ml-[5%] mr-[5%] w-[30%] leading-[1rem] text-[0.8rem]">
+                    least compatible
+                  </p>
+                  <div className="p-[1%] w-fit bg-[#FFFFFF] ">
+                    <p className="montserratDark w-[100%] leading-[1rem] text-[0.7rem]">
+                      Testtext & something
+                    </p>
+                  </div>
                 </div>
               </div>
               <div className="flex items-center w-full h-[50%] bg-transparent">

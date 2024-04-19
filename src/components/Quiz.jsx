@@ -67,7 +67,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
         quizContent = (
           <>
             <div
-              style={{ position: "absolute", top: "15%" }}
+              style={{ position: "absolute", top: "10%" }}
               className={`${slideState1} w-[88%] h-[88%] flex flex-col items-center`}
             >
               <div className={slideState2}>
