@@ -32,7 +32,7 @@ const questions = [
   },
   {
     prompt:
-      "You are working on an essay and notice that it is due in one hour. You manage to get the word count done, but still need to check your grammar and spelling. You also need to work on other assignments after.",
+      "You’re working on an essay and it’s due in one hour. You manage to finish the word count, but still need to check your spelling.",
     image: "/4.gif",
     choice1:
       "Let me check the spelling and grammar once and move on, got other work to do",

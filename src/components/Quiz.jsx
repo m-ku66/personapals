@@ -230,7 +230,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       setTimeout(() => {
                         setPersonalityType([ie, oi, tf, jp]);
                         setAppState("results");
-                      }, 5000);
+                      }, 3000);
                     } else {
                       alert(
                         "Bro's ignoring the questions and trying to leave!"
