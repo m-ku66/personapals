@@ -640,3 +640,10 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
 };
 
 export default Results;
+
+/**
+ * TO DOS
+ * Get compatibility personality types working
+ * Add catch phrase functionality
+ * Minor fixes(button padding consistency, loading screen placement after name input)
+ */

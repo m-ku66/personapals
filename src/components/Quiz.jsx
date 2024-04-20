@@ -4,7 +4,7 @@ import Button from "./Button";
 import questions from "./Questions";
 
 const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
-  const [quizState, setQuizState] = useState(2);
+  const [quizState, setQuizState] = useState(1);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [focusState1, setFocusState1] = useState("base");
   const [focusState2, setFocusState2] = useState("base");
