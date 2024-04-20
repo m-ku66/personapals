@@ -266,10 +266,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
         break;
       case 2:
         quizContent = (
-          <div
-            // style={{ position: "relative" }}
-            className={classNames.container_fit_column_center}
-          >
+          <div className={classNames.container_fit_column_center}>
             <img
               style={{ position: "absolute", top: "20%" }}
               className={`${fadeState2}`}
