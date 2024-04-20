@@ -92,14 +92,19 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       currentQuestionIndex === 8 ||
                       currentQuestionIndex === 10 ||
                       currentQuestionIndex === 12
-                        ? "mb-[0rem]"
-                        : "mb-[1.5rem]"
+                        ? "mb-[0%]"
+                        : "mb-[10%]"
                     }
                     src={currentQuestion.image}
                     alt="question image"
                   />
                 </div>
               </div>
+              {/* <div
+                style={{
+                  paddingTop: `${currentQuestionIndex === 6 ? "60%" : "0%"}`,
+                }}
+              ></div> */}
               <div className={slideState3}>
                 <Button
                   buttonText={currentQuestion.choice1}
