@@ -4,7 +4,7 @@ import Button from "./Button";
 import questions from "./Questions";
 
 const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
-  const [quizState, setQuizState] = useState(1);
+  const [quizState, setQuizState] = useState(2);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [focusState1, setFocusState1] = useState("base");
   const [focusState2, setFocusState2] = useState("base");
@@ -248,7 +248,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       setTimeout(() => {
                         setPersonalityType([ie, oi, tf, jp]);
                         setAppState("results");
-                      }, 3000);
+                      }, 8000);
                     } else {
                       alert(
                         "Bro's ignoring the questions and trying to leave!"
@@ -266,8 +266,16 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
         break;
       case 2:
         quizContent = (
-          <div className={classNames.container_fit_column_center}>
-            <img className={`${fadeState2}`} src="/loading.gif" alt="" />
+          <div
+            // style={{ position: "relative" }}
+            className={classNames.container_fit_column_center}
+          >
+            <img
+              style={{ position: "absolute", top: "20%" }}
+              className={`${fadeState2}`}
+              src="/loading.gif"
+              alt=""
+            />
           </div>
         );
         break;

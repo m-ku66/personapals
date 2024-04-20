@@ -4,7 +4,7 @@ const questions = [
       "You're at a playground, and you notice someone sitting alone in the swings. How do you react?",
     image: "/1.gif",
     choice1:
-      "Sit on one of the swings and have a friendly conversation with her",
+      "Sit on one of the swings and have a friendly conversation with him",
     choice2:
       "Strike up a conversation and invite them to join a group of people at the slides",
     id: "intvext",
