@@ -233,12 +233,12 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
   function renderPersonaType(p1, p2, p3, p4) {
     let introText;
     let displayedPersona;
-    let mostCompatible;
-    let leastCompatible;
 
     switch (true) {
-      case ((p1, p2, p3, p4) === (p1, p2, p3, p4)) ===
-        ("introvert", "intuitive", "feeler", "judger"):
+      case p1 === "introvert" &&
+        p2 === "intuitive" &&
+        p3 === "feeler" &&
+        p4 === "judger":
         introText = `${name}, you are an`;
         displayedPersona = "Embracer";
         break;
@@ -319,12 +319,89 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     return [introText, displayedPersona];
   }
 
+  function compatibility(persona) {
+    let mostCompatible;
+    let leastCompatible;
+
+    switch (persona[1]) {
+      case "Embracer":
+        mostCompatible = "Charmer & Player";
+        leastCompatible = "Collaborator & Judger";
+        break;
+      case "Player":
+        mostCompatible = "Charmer & Embracer";
+        leastCompatible = "Protector & Judger";
+        break;
+      case "Pioneer":
+        mostCompatible = "Gambler & Inventor";
+        leastCompatible = "Protector & Caregiver";
+        break;
+      case "Charmer":
+        mostCompatible = "Player & Embracer";
+        leastCompatible = "Judge & Creator";
+        break;
+      case "Creator":
+        mostCompatible = "Judge & Gambler";
+        leastCompatible = "Charmer & Daydreamer";
+        break;
+      case "Inventor":
+        mostCompatible = "Judge & Gambler";
+        leastCompatible = "Entertainer & Caregiver";
+        break;
+      case "Adventurer":
+        mostCompatible = "Embracer & Pioneer";
+        leastCompatible = "Creator & Judger";
+        break;
+      case "Reader":
+        mostCompatible = "Entertainer & Collaborator";
+        leastCompatible = "Pioneer & Player";
+        break;
+      case "Protector":
+        mostCompatible = "Entertainer & Reader";
+        leastCompatible = "Daydreamer & Charmer";
+        break;
+      case "Daydreamer":
+        mostCompatible = "Caregiver & Embracer";
+        leastCompatible = "Reader & Player";
+        break;
+      case "Gambler":
+        mostCompatible = "Inventor & Player";
+        leastCompatible = "Caregiver & Painter";
+        break;
+      case "Painter":
+        mostCompatible = "Charmer & Caregiver";
+        leastCompatible = "Gambler & Inventor";
+        break;
+      case "Collaborator":
+        mostCompatible = "Protector & Creator";
+        leastCompatible = "Pioneer & Adventurer";
+        break;
+      case "Caregiver":
+        mostCompatible = "Painter & Creator";
+        leastCompatible = "Pioneer & Player";
+        break;
+      case "Entertainer":
+        mostCompatible = "Reader & Protector";
+        leastCompatible = "Inventor & Embracer";
+        break;
+      case "Judger":
+        mostCompatible = "Gambler & Painter";
+        leastCompatible = "Charmer & Player";
+        break;
+      case "Unique Personality!":
+        mostCompatible = "Anybody!";
+        leastCompatible = "Nobody!";
+        break;
+    }
+    return [mostCompatible, leastCompatible];
+  }
+
   function renderScreen(screenType) {
     let renderedScreen;
     switch (screenType) {
       case 1:
         renderedScreen = (
-          <div className="z-[100] flex justify-center items-center w-full h-full bg-[#8886D9]">
+          <div className="z-[300] flex justify-center items-center w-full h-full bg-[#8886D9]">
             <p>Are you sure you want to restart the quiz?</p>
           </div>
         );
@@ -539,12 +616,14 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                   <div className="flex justfy-center w-fit bg-transparent">
                     <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
                       {
-                        renderPersonaType(
-                          persona1,
-                          persona2,
-                          persona3,
-                          persona4
-                        )[1]
+                        compatibility(
+                          renderPersonaType(
+                            persona1,
+                            persona2,
+                            persona3,
+                            persona4
+                          )
+                        )[0]
                       }
                     </p>
                   </div>
@@ -556,11 +635,13 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                   <div className="flex justfy-center w-fit bg-transparent">
                     <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
                       {
-                        renderPersonaType(
-                          persona1,
-                          persona2,
-                          persona3,
-                          persona4
+                        compatibility(
+                          renderPersonaType(
+                            persona1,
+                            persona2,
+                            persona3,
+                            persona4
+                          )
                         )[1]
                       }
                     </p>
@@ -645,5 +726,7 @@ export default Results;
  * TO DOS
  * Get compatibility personality types working
  * Add catch phrase functionality
+ * Error/prevention screens
+ * Fix witch statement logic
  * Minor fixes(button padding consistency, loading screen placement after name input)
  */
