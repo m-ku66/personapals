@@ -8,8 +8,9 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
   const [persona3, setPersona3] = useState("");
   const [persona4, setPersona4] = useState("");
 
-  const [resultsState, setResultsState] = useState("individual");
+  const [resultsState, setResultsState] = useState("name");
   const [personaNav, setPersonaNav] = useState(1);
+  const [name, setName] = useState("name");
 
   useEffect(() => {
     // Check personalityType and update personas accordingly
@@ -238,75 +239,75 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     switch (true) {
       case ((p1, p2, p3, p4) === (p1, p2, p3, p4)) ===
         ("introvert", "intuitive", "feeler", "judger"):
-        introText = "Name, you are an";
+        introText = `${name}, you are an`;
         displayedPersona = "Embracer";
         break;
       case (p1, p2, p3, p4) ===
         ("extrovert", "intuitive", "thinker", "perceiver"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Player";
         break;
       case (p1, p2, p3, p4) ===
         ("introvert", "intuitive", "thinker", "perceiver"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Pioneer";
         break;
       case (p1, p2, p3, p4) ===
         ("extrovert", "observant", "feeler", "perceiver"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Charmer";
         break;
       case (p1, p2, p3, p4) === ("introvert", "intuitve", "feeler", "judger"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Creator";
         break;
       case (p1, p2, p3, p4) ===
         ("introvert", "observant", "thinker", "perceiver"):
-        introText = "Name, you are an";
+        introText = `${name}, you are an`;
         displayedPersona = "Inventor";
         break;
       case (p1, p2, p3, p4) ===
         ("extrovert", "observant", "thinker", "perceiver"):
-        introText = "Name, you are an";
+        introText = `${name}, you are an`;
         displayedPersona = "Adventurer";
         break;
       case (p1, p2, p3, p4) === ("introvert", "observant", "thinker", "judger"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Reader";
         break;
       case (p1, p2, p3, p4) === ("introvert", "observant", "feeler", "judger"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Protector";
         break;
       case (p1, p2, p3, p4) ===
         ("introvert", "intuitive", "feeler", "perceiver"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Daydreamer";
         break;
       case (p1, p2, p3, p4) === ("introvert", "intuitive", "thinker", "judger"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Gambler";
         break;
       case (p1, p2, p3, p4) ===
         ("introvert", "observant", "feeler", "perceiver"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Painter";
         break;
       case (p1, p2, p3, p4) === ("extrovert", "intuitive", "thinker", "judger"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Collaborator";
         break;
       case (p1, p2, p3, p4) === ("extrovert", "observant", "feeler", "judger"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Caregiver";
         break;
       case (p1, p2, p3, p4) ===
         ("extrovert", "intuitive", "feeler", "perceiver"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Entertainer";
         break;
       case (p1, p2, p3, p4) === ("extrovert", "observant", "thinker", "judger"):
-        introText = "Name, you are a";
+        introText = `${name}, you are a`;
         displayedPersona = "Judger";
         break;
     }
@@ -515,7 +516,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                   <p className="montserratDark ml-[5%] mr-[15%] w-[30%] leading-[1rem] text-[0.8rem]">
                     most compatible
                   </p>
-                  <div className="flex justfy-center w-fit bg-[#FFFFFF]">
+                  <div className="flex justfy-center w-fit bg-transparent">
                     <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
                       Testtext & something
                     </p>
@@ -525,7 +526,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                   <p className="montserratDark ml-[5%] mr-[15%] w-[30%] leading-[1rem] text-[0.8rem]">
                     least compatible
                   </p>
-                  <div className="flex justfy-center w-fit bg-[#FFFFFF]">
+                  <div className="flex justfy-center w-fit bg-transparent">
                     <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
                       Testtext & something
                     </p>
@@ -542,6 +543,52 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
             </div>
           </div>
         );
+        break;
+      case "name":
+        results = (
+          <div>
+            <div className="slideUp2">
+              <div className={classNames.container}>
+                <div
+                  style={{ position: "relative" }}
+                  className={classNames.container_fill_center}
+                >
+                  <div
+                    style={{ position: "absolute", top: "5%" }}
+                    className={classNames.container_fit_column_center}
+                  >
+                    <p className="text-center text-[1.1rem] montserratDark w-[80%] text-white mb-[15%]">
+                      To introduce yourself to your new pals, please write your
+                      name
+                    </p>
+                    {/* Name input */}
+                    <input
+                      type="text"
+                      placeholder="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="text-center rounded-md border border-transparent p-2 text-[1.1rem] montserratDark w-[80%] text-white"
+                      style={{ backgroundColor: "#8886D9" }}
+                    />
+                    <div className="w-[60%] bg-white mb-[5%]">
+                      <hr />
+                    </div>
+                    <div className="slideUp3">
+                      <Button
+                        buttonText={"start"}
+                        purpose={setResultsState}
+                        to={"individual"}
+                        type={"start"}
+                        textColor={""}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+        break;
     }
 
     return results;
@@ -549,9 +596,11 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
 
   return (
     <>
-      <div className={renderBG(personaNav)[0]}>
-        {renderResults(resultsState)}
-      </div>
+      {personalityType && personalityType.length > 0 && (
+        <div className={renderBG(personaNav)[0]}>
+          {renderResults(resultsState)}
+        </div>
+      )}
     </>
   );
 };

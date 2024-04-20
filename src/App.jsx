@@ -3,9 +3,9 @@ import classNames from "./styles/styles";
 import TitlePage from "./components/TitlePage";
 import Quiz from "./components/Quiz";
 import Results from "./components/Results";
+import Intro from "./components/Intro";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Intro from "./components/Intro";
 
 function App() {
   AOS.init();
