@@ -378,7 +378,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
               <div className="flex flex-col w-[40%] h-full bg-transparent py-[3%]">
                 <div className="flex items-center justify-center">
                   <div
-                    onClick={() => alert("Go back?")}
+                    onClick={() => renderScreen()}
                     className="bg-[#D8D7FF] select-none cursor-pointer flex justify-center items-center rounded-[500px] w-[15px] h-[15px] mr-[5%]"
                   >
                     <p className="text-[0.8rem] montserratDark">{"<"}</p>

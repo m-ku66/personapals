@@ -72,11 +72,27 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
             >
               <div className={slideState2}>
                 <div className={classNames.container_fit_column_center}>
-                  <p className="mulishBold text-white mb-[0.7rem] w-[95%] text-center text-[1.1rem]">
+                  <p
+                    className={
+                      currentQuestionIndex === 4 ||
+                      currentQuestionIndex === 5 ||
+                      currentQuestionIndex === 8 ||
+                      currentQuestionIndex === 10
+                        ? "mulishBold text-white mb-[0.1rem] w-[95%] text-center text-[0.9rem]"
+                        : "mulishBold text-white mb-[0.7rem] w-[95%] text-center text-[1.1rem]"
+                    }
+                  >
                     {currentQuestion.prompt}
                   </p>
                   <img
-                    className="mb-[1.5rem]"
+                    className={
+                      currentQuestionIndex === 4 ||
+                      currentQuestionIndex === 5 ||
+                      currentQuestionIndex === 8 ||
+                      currentQuestionIndex === 10
+                        ? "mb-[0rem]"
+                        : "mb-[1.5rem]"
+                    }
                     src={currentQuestion.image}
                     alt="question image"
                   />
