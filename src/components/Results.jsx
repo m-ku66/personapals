@@ -804,7 +804,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                       most compatible
                     </p>
                     <div className="flex justfy-center w-fit bg-transparent">
-                      <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
+                      <p className="ml-[15%] montserratDark w-[50%] leading-[0.9rem] text-[0.6rem]">
                         {
                           compatibility(
                             renderPersonaType(
