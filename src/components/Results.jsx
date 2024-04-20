@@ -310,6 +310,10 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
         introText = `${name}, you are a`;
         displayedPersona = "Judger";
         break;
+      default:
+        introText = `${name}, you are a`;
+        displayedPersona = "Unique Personality!";
+        break;
     }
     // console.log(persona);
     return [introText, displayedPersona];
@@ -319,11 +323,14 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     let renderedScreen;
     switch (screenType) {
       case 1:
-        renderedScreen = <div></div>;
-        break;
-      case 2:
+        renderedScreen = (
+          <div className="z-[100] flex justify-center items-center w-full h-full bg-[#8886D9]">
+            <p>Are you sure you want to restart the quiz?</p>
+          </div>
+        );
         break;
     }
+    return renderedScreen;
   }
 
   function renderResults(state) {
@@ -389,7 +396,9 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
               <div className="flex flex-col w-[40%] h-full bg-transparent py-[3%]">
                 <div className="flex items-center justify-center">
                   <div
-                    onClick={() => renderScreen(1)}
+                    onClick={() => {
+                      renderScreen(1);
+                    }}
                     className="bg-[#D8D7FF] select-none cursor-pointer flex justify-center items-center rounded-[500px] w-[15px] h-[15px] mr-[5%]"
                   >
                     <p className="text-[0.8rem] montserratDark">{"<"}</p>
@@ -529,7 +538,14 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                   </p>
                   <div className="flex justfy-center w-fit bg-transparent">
                     <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
-                      Testtext & something
+                      {
+                        renderPersonaType(
+                          persona1,
+                          persona2,
+                          persona3,
+                          persona4
+                        )[1]
+                      }
                     </p>
                   </div>
                 </div>
@@ -539,7 +555,14 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                   </p>
                   <div className="flex justfy-center w-fit bg-transparent">
                     <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
-                      Testtext & something
+                      {
+                        renderPersonaType(
+                          persona1,
+                          persona2,
+                          persona3,
+                          persona4
+                        )[1]
+                      }
                     </p>
                   </div>
                 </div>
