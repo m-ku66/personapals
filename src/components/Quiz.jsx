@@ -109,7 +109,7 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                   textColor={""}
                 />
               </div>
-              <div className="py-[0.5rem]"></div>
+              <div className="py-[0.3rem]"></div>
               <div className={slideState3}>
                 <Button
                   buttonText={currentQuestion.choice2}
