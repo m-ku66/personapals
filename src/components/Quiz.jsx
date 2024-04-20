@@ -77,8 +77,9 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       currentQuestionIndex === 4 ||
                       currentQuestionIndex === 5 ||
                       currentQuestionIndex === 8 ||
-                      currentQuestionIndex === 10
-                        ? "mulishBold text-white mb-[0.1rem] w-[95%] text-center text-[0.9rem]"
+                      currentQuestionIndex === 10 ||
+                      currentQuestionIndex === 12
+                        ? "mulishBold text-white mb-[0.1rem] w-[95%] text-center text-[0rem]"
                         : "mulishBold text-white mb-[0.7rem] w-[95%] text-center text-[1.1rem]"
                     }
                   >
@@ -89,7 +90,8 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       currentQuestionIndex === 4 ||
                       currentQuestionIndex === 5 ||
                       currentQuestionIndex === 8 ||
-                      currentQuestionIndex === 10
+                      currentQuestionIndex === 10 ||
+                      currentQuestionIndex === 12
                         ? "mb-[0rem]"
                         : "mb-[1.5rem]"
                     }
