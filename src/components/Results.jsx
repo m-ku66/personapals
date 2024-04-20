@@ -8,9 +8,26 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
   const [persona3, setPersona3] = useState("");
   const [persona4, setPersona4] = useState("");
 
+  const [bubbleFade, setBubbleFade] = useState("fadeIn1");
+
   const [resultsState, setResultsState] = useState("name");
   const [personaNav, setPersonaNav] = useState(1);
   const [name, setName] = useState("name");
+
+  // Add state to keep track of the current bubble index
+  const [currentBubbleIndex, setCurrentBubbleIndex] = useState(0);
+
+  // Function to handle bubble click and randomly switch bubble image
+  const handleBubbleClick = () => {
+    // Generate a random index within the range of the bubbles array length
+    const randomIndex = Math.floor(Math.random() * (3 - 0) - 0);
+    // Update the currentBubbleIndex state with the random index
+    setCurrentBubbleIndex(randomIndex);
+    setBubbleFade("");
+    setTimeout(() => {
+      setBubbleFade("fadeIn1");
+    }, 10);
+  };
 
   useEffect(() => {
     // Check personalityType and update personas accordingly
@@ -410,6 +427,79 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     return renderedScreen;
   }
 
+  function renderBubbles(character) {
+    let bubble;
+    switch (character) {
+      case "millo":
+        bubble = [
+          "/bubbles/bubble1.png",
+          "/bubbles/bubble2.png",
+          "/bubbles/bubble3.png",
+          "/bubbles/bubble4.png",
+        ];
+        break;
+      case "duckie":
+        bubble = [
+          "/bubbles/bubble5.png",
+          "/bubbles/bubble6.png",
+          "/bubbles/bubble7.png",
+          "/bubbles/bubble8.png",
+        ];
+        break;
+      case "bari":
+        bubble = [
+          "/bubbles/bubble9.png",
+          "/bubbles/bubble10.png",
+          "/bubbles/bubble11.png",
+          "/bubbles/bubble12.png",
+        ];
+        break;
+      case "lu":
+        bubble = [
+          "/bubbles/bubble13.png",
+          "/bubbles/bubble14.png",
+          "/bubbles/bubble15.png",
+          "/bubbles/bubble16.png",
+        ];
+        break;
+      case "nom":
+        bubble = [
+          "/bubbles/bubble16-1.png",
+          "/bubbles/bubble16-2.png",
+          "/bubbles/bubble16-3.png",
+          "/bubbles/bubble16-4.png",
+        ];
+        break;
+      case "spook":
+        bubble = [
+          "/bubbles/bubble16-5.png",
+          "/bubbles/bubble16-6.png",
+          "/bubbles/bubble16-7.png",
+          "/bubbles/bubble16-8.png",
+        ];
+        break;
+      case "blinky":
+        bubble = [
+          "/bubbles/bubble16-9.png",
+          "/bubbles/bubble16-10.png",
+          "/bubbles/bubble16-11.png",
+          "/bubbles/bubble16-12.png",
+        ];
+        break;
+      case "misty":
+        bubble = [
+          "/bubbles/bubble16-13.png",
+          "/bubbles/bubble16-14.png",
+          "/bubbles/bubble16-15.png",
+          "/bubbles/bubble16-16.png",
+        ];
+        break;
+      default:
+        break;
+    }
+    return bubble;
+  }
+
   function renderResults(state) {
     let results;
 
@@ -417,7 +507,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
       case "individual":
         results = (
           <div className="relative w-full h-full flex  flex-col justify-center items-center">
-            <div className="absolute top-[5%]">
+            <div className="w-[80%] h-[80%] absolute top-[5%]">
               <div className="flex flex-col items-center">
                 <p className="mulishBold text-[1rem] mb-[6%]">
                   {" "}
@@ -503,7 +593,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 className="relative w-[100%] h-[100%] flex justify-center items-center"
               >
                 {persona1 === "introvert" ? (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[70%]">
+                  <div
+                    style={{ position: "relative" }}
+                    className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
+                  >
+                    <div className="w-[80%] h-[80%] absolute top-[5%]">
+                      <img
+                        className={bubbleFade}
+                        src={renderBubbles("millo")[currentBubbleIndex]}
+                        onClick={handleBubbleClick}
+                      />
+                    </div>
                     <img
                       className="w-full h-full"
                       src="/characters/milo.png"
@@ -511,7 +611,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
+                  <div
+                    style={{ position: "relative" }}
+                    className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                  >
+                    <div className="w-[80%] h-[80%] absolute top-[5%]">
+                      <img
+                        className={bubbleFade}
+                        src={renderBubbles("duckie")[currentBubbleIndex]}
+                        onClick={handleBubbleClick}
+                      />
+                    </div>
                     <img
                       className="w-full h-full"
                       src="/characters/duckie.png"
@@ -530,7 +640,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 className="relative w-[100%] h-[100%] flex justify-center items-center"
               >
                 {persona2 === "observant" ? (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
+                  <div
+                    style={{ position: "relative" }}
+                    className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                  >
+                    <div className="w-[80%] h-[80%] absolute top-[5%]">
+                      <img
+                        className={bubbleFade}
+                        src={renderBubbles("bari")[currentBubbleIndex]}
+                        onClick={handleBubbleClick}
+                      />
+                    </div>
                     <img
                       className="w-full h-full"
                       src="/characters/bari.png"
@@ -538,7 +658,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
+                  <div
+                    style={{ position: "relative" }}
+                    className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                  >
+                    <div className="w-[80%] h-[80%] absolute top-[5%]">
+                      <img
+                        className={bubbleFade}
+                        src={renderBubbles("lu")[currentBubbleIndex]}
+                        onClick={handleBubbleClick}
+                      />
+                    </div>
                     <img
                       className="w-full h-full"
                       src="/characters/lu.png"
@@ -557,7 +687,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 className="relative w-[100%] h-[100%] flex justify-center items-center"
               >
                 {persona3 === "feeler" ? (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
+                  <div
+                    style={{ position: "relative" }}
+                    className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                  >
+                    <div className="w-[80%] h-[80%] absolute top-[5%]">
+                      <img
+                        className={bubbleFade}
+                        src={renderBubbles("spook")[currentBubbleIndex]}
+                        onClick={handleBubbleClick}
+                      />
+                    </div>
                     <img
                       className="w-full h-full"
                       src="/characters/spook.png"
@@ -565,7 +705,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[70%]">
+                  <div
+                    style={{ position: "relative" }}
+                    className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
+                  >
+                    <div className="w-[80%] h-[80%] absolute top-[5%]">
+                      <img
+                        className={bubbleFade}
+                        src={renderBubbles("nom")[currentBubbleIndex]}
+                        onClick={handleBubbleClick}
+                      />
+                    </div>
                     <img
                       className="w-full h-full"
                       src="/characters/nom.png"
@@ -584,7 +734,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 className="relative w-[100%] h-[100%] flex justify-center items-center"
               >
                 {persona4 === "judger" ? (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[70%]">
+                  <div
+                    style={{ position: "relative" }}
+                    className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
+                  >
+                    <div className="w-[80%] h-[80%] absolute top-[5%]">
+                      <img
+                        className={bubbleFade}
+                        src={renderBubbles("blinky")[currentBubbleIndex]}
+                        onClick={handleBubbleClick}
+                      />
+                    </div>
                     <img
                       className="w-full h-full"
                       src="/characters/blinky.png"
@@ -592,7 +752,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                     ></img>
                   </div>
                 ) : (
-                  <div className="bg-transparent flex justify-center items-center w-[100%] h-[80%]">
+                  <div
+                    style={{ position: "relative" }}
+                    className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                  >
+                    <div className="w-[80%] h-[80%] absolute top-[5%]">
+                      <img
+                        className={bubbleFade}
+                        src={renderBubbles("misty")[currentBubbleIndex]}
+                        onClick={handleBubbleClick}
+                      />
+                    </div>
                     <img
                       className="w-full h-full"
                       src="/characters/misty.png"
@@ -724,7 +894,6 @@ export default Results;
 
 /**
  * TO DOS
- * Get compatibility personality types working
  * Add catch phrase functionality
  * Error/prevention screens
  * Fix witch statement logic
