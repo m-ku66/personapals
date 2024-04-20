@@ -108,7 +108,7 @@ const questions = [
   },
   {
     prompt:
-      "You're on your way home after a busy day. Suddenly, your friends are making last minute plans to go to one of your favorite concerts. You can go at a later date, but the price is more expensive. What would you do?",
+      "Your friends are making last minute plans to go to one of your favorite concerts. You can go at a later date, but the price is more expensive.",
     image: "/12.gif",
     choice1: "It's cheaper, and we can do it now?? Let's go!",
     choice2: "Reschedule at a later date, my time matters more than money",
