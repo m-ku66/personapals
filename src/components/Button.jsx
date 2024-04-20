@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classNames from "../styles/styles";
 
 const Button = ({ buttonText, purpose, to, type, textColor }) => {
-  const titleText = "mulish text-[1rem] text-[#8886D9]";
+  const titleText = "mulishBold text-[1rem] text-[#8886D9]";
   const whiteText = "mulish text-white text-[0.8rem]";
 
   function renderClass(btnType) {

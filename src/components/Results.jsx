@@ -315,6 +315,17 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     return [introText, displayedPersona];
   }
 
+  function renderScreen(screenType) {
+    let renderedScreen;
+    switch (screenType) {
+      case 1:
+        renderedScreen = <div></div>;
+        break;
+      case 2:
+        break;
+    }
+  }
+
   function renderResults(state) {
     let results;
 
@@ -378,7 +389,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
               <div className="flex flex-col w-[40%] h-full bg-transparent py-[3%]">
                 <div className="flex items-center justify-center">
                   <div
-                    onClick={() => renderScreen()}
+                    onClick={() => renderScreen(1)}
                     className="bg-[#D8D7FF] select-none cursor-pointer flex justify-center items-center rounded-[500px] w-[15px] h-[15px] mr-[5%]"
                   >
                     <p className="text-[0.8rem] montserratDark">{"<"}</p>

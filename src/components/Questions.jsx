@@ -74,7 +74,7 @@ const questions = [
     choice1:
       "More about the plot, analyzing character motivations and plot twists",
     choice2:
-      "Invested in characters stories, seeing their struggles and celebrating with them",
+      "Invest in characters stories, seeing their struggles and celebrating with them",
     id: "thivfee",
     key: "h",
   },
@@ -82,17 +82,17 @@ const questions = [
     prompt:
       "You saw someone stealing food from a local gas station because they have no money. How would you react?",
     image: "/9.gif",
-    choice1: "Stealing food is still prohibited",
+    choice1: `${"Stealing food is still prohibited"}`,
     choice2: "That's sad, having no money to buy food is hard in this economy",
     id: "thivfee",
     key: "i",
   },
   {
     prompt:
-      "You walk into your favorite ice cream shop and always order the same flavor. Suddenly, they announce a new ice cream flavor available for a limited time. What action would you take?",
+      "You walk into your favorite ice cream shop and always order the same flavor. Suddenly, they announce a new ice cream flavor available for a limited time.",
     image: "/10.gif",
     choice1:
-      "Let me stick to the same flavor, but if my friend says they like it then i'll probably try it",
+      "I like the same flavor, but if my friend says they like it then i'll probably try it",
     choice2: "Cool, a new flavor! let me give it a try",
     id: "judvper",
     key: "j",
