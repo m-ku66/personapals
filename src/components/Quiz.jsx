@@ -56,7 +56,13 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
   }
 
   useEffect(() => {
-    console.log(currentAnswer);
+    console.log(
+      "Current question: ",
+      currentQuestionIndex + 1,
+      " Index: ",
+      currentQuestionIndex
+    );
+    console.log("Selected answer: ", currentAnswer);
     console.log(ie, oi, tf, jp);
   }, [currentAnswer]);
 
@@ -79,21 +85,28 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                       currentQuestionIndex === 8 ||
                       currentQuestionIndex === 10 ||
                       currentQuestionIndex === 12
-                        ? "mulishBold text-white mb-[0.0rem] w-[97%] text-center text-[0.95rem]"
+                        ? "mulishBold text-white mb-[0.0rem] w-[97%] text-center text-[0.90rem]"
                         : "mulishBold text-white mb-[0.7rem] w-[95%] text-center text-[1rem]"
                     }
                   >
                     {currentQuestion.prompt}
                   </p>
                   <img
+                    style={{
+                      width:
+                        currentQuestionIndex === 9 ||
+                        currentQuestionIndex === 11
+                          ? "85%"
+                          : "100%",
+                    }}
                     className={
                       currentQuestionIndex === 4 ||
                       currentQuestionIndex === 5 ||
                       currentQuestionIndex === 8 ||
                       currentQuestionIndex === 10 ||
                       currentQuestionIndex === 12
-                        ? "mb-[0%]"
-                        : "mb-[10%]"
+                        ? "mb-[15%]"
+                        : "mb-[8%]"
                     }
                     src={currentQuestion.image}
                     alt="question image"

@@ -82,7 +82,7 @@ const questions = [
     prompt:
       "You saw someone stealing food from a local gas station because they have no money. How would you react?",
     image: "/9.gif",
-    choice1: `${"Stealing food is still prohibited"}`,
+    choice1: `\xa0\xa0\xa0\xa0\xa0${"Stealing food is still prohibited"}\xa0\xa0\xa0\xa0\xa0\xa0`,
     choice2: "That's sad, having no money to buy food is hard in this economy",
     id: "thivfee",
     key: "i",
