@@ -100,12 +100,12 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                           : "100%",
                     }}
                     className={
-                      currentQuestionIndex === 4 ||
+                      currentQuestionIndex === 3 ||
                       currentQuestionIndex === 5 ||
                       currentQuestionIndex === 8 ||
                       currentQuestionIndex === 10 ||
                       currentQuestionIndex === 12
-                        ? "mb-[15%]"
+                        ? "mb-[-5%]"
                         : "mb-[8%]"
                     }
                     src={currentQuestion.image}
