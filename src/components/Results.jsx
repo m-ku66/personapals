@@ -578,8 +578,8 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 />
               </div>
             </div>
-            <div className="flex justify-center items-center w-full h-full">
-              <div className="w-[95%] h-[95%] flex flex-col outline outline-[1px] outline-white/[0.3]">
+            <div className="flex justify-center items-center w-full h-full p-[1%]">
+              <div className="w-[99%] h-[99%] flex flex-col outline outline-[1px] outline-white/[0.2]">
                 <div className="flex w-full h-[15vh] bg-[#8886D90]">
                   <div className="flex flex-col w-[40%] h-full bg-transparent py-[3%]">
                     <div className="flex items-center justify-center">
