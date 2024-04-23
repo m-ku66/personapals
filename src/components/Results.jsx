@@ -418,7 +418,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
     switch (screenType) {
       case 1:
         setOverlayState(
-          "z-[500] absolute flex justify-center items-center w-full h-[150vh] bg-[#8886D9] overflow-y-hidden"
+          "z-[500] absolute flex justify-center items-center w-full h-[110vh] bg-[#8886D9] overflow-y-hidden"
         );
         break;
     }
