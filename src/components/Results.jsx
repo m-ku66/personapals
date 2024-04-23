@@ -578,272 +578,284 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                 />
               </div>
             </div>
-            <div className="w-full h-full flex flex-col">
-              <div className="flex w-full h-[15vh] bg-[#8886D90]">
-                <div className="flex flex-col w-[40%] h-full bg-transparent py-[3%]">
-                  <div className="flex items-center justify-center">
-                    <div
-                      onClick={() => {
-                        renderScreen(1);
-                      }}
-                      className="bg-[#D8D7FF] select-none cursor-pointer flex justify-center items-center rounded-[500px] w-[15px] h-[15px] mr-[5%]"
-                    >
-                      <p className="text-[0.8rem] montserratDark">{"<"}</p>
+            <div className="flex justify-center items-center w-full h-full">
+              <div className="w-[95%] h-[95%] flex flex-col outline outline-[1px] outline-white/[0.3]">
+                <div className="flex w-full h-[15vh] bg-[#8886D90]">
+                  <div className="flex flex-col w-[40%] h-full bg-transparent py-[3%]">
+                    <div className="flex items-center justify-center">
+                      <div
+                        onClick={() => {
+                          renderScreen(1);
+                        }}
+                        className="bg-[#D8D7FF] select-none cursor-pointer flex justify-center items-center rounded-[500px] w-[15px] h-[15px] mr-[5%]"
+                      >
+                        <p className="text-[0.8rem] montserratDark">{"<"}</p>
+                      </div>
+                      <p className="text-[#D8D7FF] montserratDark text-[0.8rem] text-center">
+                        Go back
+                      </p>
                     </div>
-                    <p className="text-[#D8D7FF] montserratDark text-[0.8rem] text-center">
-                      Go back
+                    <p className="text-white montserratDark text-[1rem] text-center">
+                      Personality Test Result:
                     </p>
                   </div>
-                  <p className="text-white montserratDark text-[1rem] text-center">
-                    Personality Test Result:
-                  </p>
-                </div>
-                <div className="py-[2%] flex items-center flex-col w-[60%] h-full bg-[#D8D7FF]">
-                  <p className="text-center text-[1rem] montserratDark">{`${
-                    renderPersonaType(persona1, persona2, persona3, persona4)[0]
-                  }`}</p>
-                  <p className="text-center text-[#434185] text-[2rem] montserratBold">{`${
-                    renderPersonaType(persona1, persona2, persona3, persona4)[1]
-                  }`}</p>
-                </div>
-              </div>
-              <div className="w-full h-full grid grid-rows-2 grid-flow-col">
-                <div
-                  style={{ backgroundColor: `${renderBG(1)[2]}` }}
-                  className="relative w-[100%] h-[100%] flex justify-center items-center"
-                >
-                  {persona1 === "introvert" ? (
-                    <div
-                      style={{ position: "relative" }}
-                      className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
-                    >
-                      <div className="w-[80%] h-[80%] absolute top-[-1%]">
-                        <img
-                          className={bubbleFade}
-                          src={renderBubbles("millo")[currentBubbleIndex]}
-                          onClick={handleBubbleClick}
-                        />
-                      </div>
-                      <img
-                        className="w-full h-full"
-                        src="/characters/milo.png"
-                        alt="Milo"
-                      ></img>
-                    </div>
-                  ) : (
-                    <div
-                      style={{ position: "relative" }}
-                      className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
-                    >
-                      <div className="w-[80%] h-[80%] absolute top-[5%]">
-                        <img
-                          className={bubbleFade}
-                          src={renderBubbles("duckie")[currentBubbleIndex]}
-                          onClick={handleBubbleClick}
-                        />
-                      </div>
-                      <img
-                        className="w-full h-full"
-                        src="/characters/duckie.png"
-                        alt="Duckie"
-                      ></img>
-                    </div>
-                  )}
-                  <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
-                    <p className="montserratBold text-[black]/[0.6]">
-                      {persona1 === "introvert" ? "millo" : "Duckie"}
-                    </p>
+                  <div className="py-[2%] flex items-center flex-col w-[60%] h-full bg-[#D8D7FF]">
+                    <p className="text-center text-[1rem] montserratDark">{`${
+                      renderPersonaType(
+                        persona1,
+                        persona2,
+                        persona3,
+                        persona4
+                      )[0]
+                    }`}</p>
+                    <p className="text-center text-[#434185] text-[2rem] montserratBold">{`${
+                      renderPersonaType(
+                        persona1,
+                        persona2,
+                        persona3,
+                        persona4
+                      )[1]
+                    }`}</p>
                   </div>
                 </div>
-                <div
-                  style={{ backgroundColor: `${renderBG(2)[2]}` }}
-                  className="relative w-[100%] h-[100%] flex justify-center items-center"
-                >
-                  {persona2 === "observant" ? (
-                    <div
-                      style={{ position: "relative" }}
-                      className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
-                    >
-                      <div className="w-[80%] h-[80%] absolute top-[5%]">
+                <div className="w-full h-full grid grid-rows-2 grid-flow-col">
+                  <div
+                    style={{ backgroundColor: `${renderBG(1)[2]}` }}
+                    className="relative w-[100%] h-[100%] flex justify-center items-center"
+                  >
+                    {persona1 === "introvert" ? (
+                      <div
+                        style={{ position: "relative" }}
+                        className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
+                      >
+                        <div className="w-[80%] h-[80%] absolute top-[-1%]">
+                          <img
+                            className={bubbleFade}
+                            src={renderBubbles("millo")[currentBubbleIndex]}
+                            onClick={handleBubbleClick}
+                          />
+                        </div>
                         <img
-                          className={bubbleFade}
-                          src={renderBubbles("bari")[currentBubbleIndex]}
-                          onClick={handleBubbleClick}
-                        />
+                          className="w-full h-full"
+                          src="/characters/milo.png"
+                          alt="Milo"
+                        ></img>
                       </div>
-                      <img
-                        className="w-full h-full"
-                        src="/characters/bari.png"
-                        alt="Bari"
-                      ></img>
-                    </div>
-                  ) : (
-                    <div
-                      style={{ position: "relative" }}
-                      className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
-                    >
-                      <div className="w-[80%] h-[80%] absolute top-[20%]">
+                    ) : (
+                      <div
+                        style={{ position: "relative" }}
+                        className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                      >
+                        <div className="w-[80%] h-[80%] absolute top-[5%]">
+                          <img
+                            className={bubbleFade}
+                            src={renderBubbles("duckie")[currentBubbleIndex]}
+                            onClick={handleBubbleClick}
+                          />
+                        </div>
                         <img
-                          className={bubbleFade}
-                          src={renderBubbles("lu")[currentBubbleIndex]}
-                          onClick={handleBubbleClick}
-                        />
+                          className="w-full h-full"
+                          src="/characters/duckie.png"
+                          alt="Duckie"
+                        ></img>
                       </div>
-                      <img
-                        className="w-full h-full"
-                        src="/characters/lu.png"
-                        alt="Lu"
-                      ></img>
-                    </div>
-                  )}
-                  <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
-                    <p className="montserratBold text-[black]/[0.6]">
-                      {persona2 === "observant" ? "BARI" : "LU"}
-                    </p>
-                  </div>
-                </div>
-                <div
-                  style={{ backgroundColor: `${renderBG(3)[2]}` }}
-                  className="relative w-[100%] h-[100%] flex justify-center items-center"
-                >
-                  {persona3 === "feeler" ? (
-                    <div
-                      style={{ position: "relative" }}
-                      className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
-                    >
-                      <div className="w-[80%] h-[80%] absolute top-[5%]">
-                        <img
-                          className={bubbleFade}
-                          src={renderBubbles("spook")[currentBubbleIndex]}
-                          onClick={handleBubbleClick}
-                        />
-                      </div>
-                      <img
-                        className="w-full h-full"
-                        src="/characters/spook.png"
-                        alt="Spook"
-                      ></img>
-                    </div>
-                  ) : (
-                    <div
-                      style={{ position: "relative" }}
-                      className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
-                    >
-                      <div className="w-[80%] h-[80%] absolute top-[5%]">
-                        <img
-                          className={bubbleFade}
-                          src={renderBubbles("nom")[currentBubbleIndex]}
-                          onClick={handleBubbleClick}
-                        />
-                      </div>
-                      <img
-                        className="w-full h-full"
-                        src="/characters/nom.png"
-                        alt="Nom"
-                      ></img>
-                    </div>
-                  )}
-                  <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
-                    <p className="montserratBold text-[black]/[0.6]">
-                      {persona3 === "feeler" ? "SPOOK" : "nom"}
-                    </p>
-                  </div>
-                </div>
-                <div
-                  style={{ backgroundColor: `${renderBG(4)[2]}` }}
-                  className="relative w-[100%] h-[100%] flex justify-center items-center"
-                >
-                  {persona4 === "judger" ? (
-                    <div
-                      style={{ position: "relative" }}
-                      className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
-                    >
-                      <div className="w-[80%] h-[80%] absolute top-[5%]">
-                        <img
-                          className={bubbleFade}
-                          src={renderBubbles("blinky")[currentBubbleIndex]}
-                          onClick={handleBubbleClick}
-                        />
-                      </div>
-                      <img
-                        className="w-full h-full"
-                        src="/characters/blinky.png"
-                        alt="Blinky"
-                      ></img>
-                    </div>
-                  ) : (
-                    <div
-                      style={{ position: "relative" }}
-                      className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
-                    >
-                      <div className="w-[80%] h-[80%] absolute top-[5%]">
-                        <img
-                          className={bubbleFade}
-                          src={renderBubbles("misty")[currentBubbleIndex]}
-                          onClick={handleBubbleClick}
-                        />
-                      </div>
-                      <img
-                        className="w-full h-full"
-                        src="/characters/misty.png"
-                        alt="Misty"
-                      ></img>
-                    </div>
-                  )}
-                  <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
-                    <p className="montserratBold text-[black]/[0.6]">
-                      {persona4 === "judger" ? "BLINKY" : "misty"}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col w-full h-[15vh] bg-[#8886D90]">
-                <div className="flex w-full h-[50%] bg-[#D8D7FF]">
-                  <div className="flex items-center bg-[#D8D7FF] w-fit">
-                    <p className="montserratDark ml-[5%] mr-[15%] w-[30%] leading-[1rem] text-[0.8rem]">
-                      most compatible
-                    </p>
-                    <div className="flex justfy-center w-fit bg-transparent">
-                      <p className="ml-[15%] montserratDark w-[50%] leading-[0.9rem] text-[0.6rem]">
-                        {
-                          compatibility(
-                            renderPersonaType(
-                              persona1,
-                              persona2,
-                              persona3,
-                              persona4
-                            )
-                          )[0]
-                        }
+                    )}
+                    <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
+                      <p className="montserratBold text-[black]/[0.6]">
+                        {persona1 === "introvert" ? "millo" : "Duckie"}
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-center bg-[#D8D7FF] w-fit">
-                    <p className="montserratDark ml-[5%] mr-[15%] w-[30%] leading-[1rem] text-[0.8rem]">
-                      least compatible
-                    </p>
-                    <div className="flex justfy-center w-fit bg-transparent">
-                      <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
-                        {
-                          compatibility(
-                            renderPersonaType(
-                              persona1,
-                              persona2,
-                              persona3,
-                              persona4
-                            )
-                          )[1]
-                        }
+                  <div
+                    style={{ backgroundColor: `${renderBG(2)[2]}` }}
+                    className="relative w-[100%] h-[100%] flex justify-center items-center"
+                  >
+                    {persona2 === "observant" ? (
+                      <div
+                        style={{ position: "relative" }}
+                        className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                      >
+                        <div className="w-[80%] h-[80%] absolute top-[5%]">
+                          <img
+                            className={bubbleFade}
+                            src={renderBubbles("bari")[currentBubbleIndex]}
+                            onClick={handleBubbleClick}
+                          />
+                        </div>
+                        <img
+                          className="w-full h-full"
+                          src="/characters/bari.png"
+                          alt="Bari"
+                        ></img>
+                      </div>
+                    ) : (
+                      <div
+                        style={{ position: "relative" }}
+                        className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                      >
+                        <div className="w-[80%] h-[80%] absolute top-[20%]">
+                          <img
+                            className={bubbleFade}
+                            src={renderBubbles("lu")[currentBubbleIndex]}
+                            onClick={handleBubbleClick}
+                          />
+                        </div>
+                        <img
+                          className="w-full h-full"
+                          src="/characters/lu.png"
+                          alt="Lu"
+                        ></img>
+                      </div>
+                    )}
+                    <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
+                      <p className="montserratBold text-[black]/[0.6]">
+                        {persona2 === "observant" ? "BARI" : "LU"}
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    style={{ backgroundColor: `${renderBG(3)[2]}` }}
+                    className="relative w-[100%] h-[100%] flex justify-center items-center"
+                  >
+                    {persona3 === "feeler" ? (
+                      <div
+                        style={{ position: "relative" }}
+                        className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                      >
+                        <div className="w-[80%] h-[80%] absolute top-[5%]">
+                          <img
+                            className={bubbleFade}
+                            src={renderBubbles("spook")[currentBubbleIndex]}
+                            onClick={handleBubbleClick}
+                          />
+                        </div>
+                        <img
+                          className="w-full h-full"
+                          src="/characters/spook.png"
+                          alt="Spook"
+                        ></img>
+                      </div>
+                    ) : (
+                      <div
+                        style={{ position: "relative" }}
+                        className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
+                      >
+                        <div className="w-[80%] h-[80%] absolute top-[5%]">
+                          <img
+                            className={bubbleFade}
+                            src={renderBubbles("nom")[currentBubbleIndex]}
+                            onClick={handleBubbleClick}
+                          />
+                        </div>
+                        <img
+                          className="w-full h-full"
+                          src="/characters/nom.png"
+                          alt="Nom"
+                        ></img>
+                      </div>
+                    )}
+                    <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
+                      <p className="montserratBold text-[black]/[0.6]">
+                        {persona3 === "feeler" ? "SPOOK" : "nom"}
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    style={{ backgroundColor: `${renderBG(4)[2]}` }}
+                    className="relative w-[100%] h-[100%] flex justify-center items-center"
+                  >
+                    {persona4 === "judger" ? (
+                      <div
+                        style={{ position: "relative" }}
+                        className="bg-transparent flex justify-center items-center w-[100%] h-[70%]"
+                      >
+                        <div className="w-[80%] h-[80%] absolute top-[5%]">
+                          <img
+                            className={bubbleFade}
+                            src={renderBubbles("blinky")[currentBubbleIndex]}
+                            onClick={handleBubbleClick}
+                          />
+                        </div>
+                        <img
+                          className="w-full h-full"
+                          src="/characters/blinky.png"
+                          alt="Blinky"
+                        ></img>
+                      </div>
+                    ) : (
+                      <div
+                        style={{ position: "relative" }}
+                        className="bg-transparent flex justify-center items-center w-[100%] h-[80%]"
+                      >
+                        <div className="w-[80%] h-[80%] absolute top-[5%]">
+                          <img
+                            className={bubbleFade}
+                            src={renderBubbles("misty")[currentBubbleIndex]}
+                            onClick={handleBubbleClick}
+                          />
+                        </div>
+                        <img
+                          className="w-full h-full"
+                          src="/characters/misty.png"
+                          alt="Misty"
+                        ></img>
+                      </div>
+                    )}
+                    <div className="flex justify-center items-center absolute bottom-[0%] w-full h-[8%] bg-[#FFFFFF]/[0.4]">
+                      <p className="montserratBold text-[black]/[0.6]">
+                        {persona4 === "judger" ? "BLINKY" : "misty"}
                       </p>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center w-full h-[50%] bg-transparent">
-                  <img
-                    className="ml-[5%]"
-                    src="/pp_logo.png"
-                    alt="Persona Pals logo"
-                  />
+                <div className="flex flex-col w-full h-[15vh] bg-[#8886D90]">
+                  <div className="flex w-full h-[50%] bg-[#D8D7FF]">
+                    <div className="flex items-center bg-[#D8D7FF] w-fit">
+                      <p className="montserratDark ml-[5%] mr-[15%] w-[30%] leading-[1rem] text-[0.8rem]">
+                        most compatible
+                      </p>
+                      <div className="flex justfy-center w-fit bg-transparent">
+                        <p className="ml-[15%] montserratDark w-[50%] leading-[0.9rem] text-[0.6rem]">
+                          {
+                            compatibility(
+                              renderPersonaType(
+                                persona1,
+                                persona2,
+                                persona3,
+                                persona4
+                              )
+                            )[0]
+                          }
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center bg-[#D8D7FF] w-fit">
+                      <p className="montserratDark ml-[5%] mr-[15%] w-[30%] leading-[1rem] text-[0.8rem]">
+                        least compatible
+                      </p>
+                      <div className="flex justfy-center w-fit bg-transparent">
+                        <p className="montserratDark w-[100%] leading-[0.9rem] text-[0.6rem]">
+                          {
+                            compatibility(
+                              renderPersonaType(
+                                persona1,
+                                persona2,
+                                persona3,
+                                persona4
+                              )
+                            )[1]
+                          }
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center w-full h-[50%] bg-transparent">
+                    <img
+                      className="ml-[5%]"
+                      src="/pp_logo.png"
+                      alt="Persona Pals logo"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -868,6 +880,7 @@ const Results = ({ setAppState, personalityType, setPersonalityType }) => {
                       name
                     </p>
                     {/* Name input */}
+                    {/* focus:border-transparent */}
                     <input
                       type="text"
                       placeholder="name"

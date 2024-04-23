@@ -98,7 +98,12 @@ const Quiz = ({ personalityType, setPersonalityType, setAppState }) => {
                         currentQuestionIndex === 11
                           ? "85%"
                           : "100%",
-                      marginBottom: currentQuestionIndex === 5 ? "10%" : "0%",
+                      marginBottom:
+                        currentQuestionIndex === 5 ||
+                        currentQuestionIndex === 8 ||
+                        currentQuestionIndex === 10
+                          ? "10%"
+                          : "0%",
                     }}
                     className={
                       currentQuestionIndex === 3 ||
