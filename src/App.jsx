@@ -15,9 +15,9 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // document.body.style.overflowY =
-      //   appState === "title" ? "hidden" : "scroll";
-      document.body.style.overflowY = appState ? "hidden" : "scroll";
+      document.body.style.overflowY =
+        appState === "results" ? "scroll" : "hidden";
+      // document.body.style.overflowY = appState ? "hidden" : "scroll";
     };
 
     handleScroll(); // Set initial scroll behavior based on the initial app state
